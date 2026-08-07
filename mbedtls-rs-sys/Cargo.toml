@@ -44,6 +44,13 @@ default = ["tls"]
 # hooks match this profile exactly.
 prebuilt = ["tls"]
 
+# Select the AmpKeeper ESP32-S3 TLS client profile whose generated libraries
+# and bindings are committed alongside the upstream full-TLS prebuilts. This
+# is an internal compatibility marker, not a general-purpose configuration
+# bundle: the actual algorithm and hook features remain explicit at the
+# consumer.
+ampkeeper-s3-prebuilt = []
+
 # ─── TLS record buffer sizing (per-connection RAM) ───
 # Cap MBEDTLS_SSL_IN/OUT_CONTENT_LEN below the 16384 default to shrink the
 # per-connection record buffers. Cargo features are additive, so when several
@@ -75,6 +82,10 @@ use-gcc = []
 # If this feature is not enabled, the build will assume and use the "official" RiscV GCC toolchain:
 # https://github.com/riscv-collab/riscv-gnu-toolchain
 force-esp-riscv-gcc = ["use-gcc"]
+
+# Enable Mbed TLS restartable ECC. This changes public C structure layouts and
+# therefore deliberately invalidates the committed prebuilt libraries/bindings.
+ecp-restartable = ["alg-ecp", "curve-secp256r1"]
 
 # Disable all or some hooks; this would preclude hooking custom HW-accelerated algos
 nohook = [

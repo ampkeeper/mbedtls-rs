@@ -27,6 +27,10 @@ default = ["tls"]
 defmt = ["dep:defmt", "mbedtls-rs-sys/defmt"]
 log = ["dep:log", "mbedtls-rs-sys/log"]
 
+# Internal marker for AmpKeeper's generated ESP32-S3 TLS client artifacts.
+# Consumers must still select the matching explicit TLS features.
+ampkeeper-s3-prebuilt = ["mbedtls-rs-sys/ampkeeper-s3-prebuilt"]
+
 # ─── Algorithm profile selection (granular passthrough to mbedtls-rs-sys) ───
 # Curated bundles
 # `tls`/`openthread` compile in MBEDTLS_DEBUG_C, so they also enable local
@@ -111,6 +115,10 @@ kex-dhe-psk = ["mbedtls-rs-sys/kex-dhe-psk"]
 kex-ecdhe-psk = ["mbedtls-rs-sys/kex-ecdhe-psk"]
 kex-ecjpake = ["mbedtls-rs-sys/kex-ecjpake"]
 platform-zeroize-alt = ["mbedtls-rs-sys/platform-zeroize-alt"]
+
+# Bound ECC work performed by one async handshake poll. This changes Mbed TLS
+# context layouts, so the sys crate rebuilds the C sources and bindings.
+ecp-restartable = ["mbedtls-rs-sys/ecp-restartable"]
 
 # TLS record buffer sizing (per-connection RAM) — passthrough to mbedtls-rs-sys.
 ssl-in-content-len-256 = ["mbedtls-rs-sys/ssl-in-content-len-256"]

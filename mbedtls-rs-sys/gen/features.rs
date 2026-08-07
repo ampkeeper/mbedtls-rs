@@ -136,6 +136,7 @@ pub const OPTIONAL_UNIVERSE: &[&str] = &[
     "DHM_C",
     "ECP_C",
     "ECP_NIST_OPTIM",
+    "ECP_RESTARTABLE",
     "ECDH_C",
     "ECDSA_C",
     "ECDSA_DETERMINISTIC",
@@ -273,6 +274,7 @@ pub const FEATURE_DEFINES: &[(&str, &[&str])] = &[
     ("ALG_RSA_PSS", &["PKCS1_V21", "X509_RSASSA_PSS_SUPPORT"]),
     ("ALG_DHM", &["DHM_C"]),
     ("ALG_ECP", &["ECP_C", "ECP_NIST_OPTIM"]),
+    ("ECP_RESTARTABLE", &["ECP_RESTARTABLE"]),
     ("ALG_ECDH", &["ECDH_C"]),
     // Deterministic ECDSA (RFC 6979) requires HMAC-DRBG (check_config.h), so
     // it is folded in here.
@@ -493,6 +495,23 @@ pub const PREBUILT_FEATURES: &[&str] = &[
     "KEX_ECDHE_PSK",
 ];
 
+/// The exact feature-driven configuration of AmpKeeper's ESP32-S3 HTTPS
+/// client. Its restartable TLS 1.2 ECDHE profile and smaller outbound record
+/// buffer require different C layouts from the generic full-TLS prebuilts.
+///
+/// This is deliberately an internal artifact fingerprint, rather than a
+/// consumer-facing bundle: the firmware continues to name every feature it
+/// relies on in its manifest.
+pub const AMPKEEPER_S3_PREBUILT_FEATURES: &[&str] = &[
+    "ALG_SHA256", "ALG_SHA512", "ALG_AES", "ALG_GCM", "ALG_HKDF",
+    "ALG_RSA", "ALG_RSA_PSS", "ALG_ECP", "ALG_ECDH", "ALG_ECDSA", "ECP_RESTARTABLE", "PK",
+    "CURVE_SECP256R1", "CURVE_SECP384R1",
+    "DRBG_CTR", "ENTROPY", "BASE64", "PEM_PARSE", "X509_PARSE",
+    "TLS_ENGINE", "TLS_CORE", "TLS_CLIENT", "TLS_SERVER",
+    "TLS_PROTO_TLS12", "TLS_PROTO_TLS13",
+    "KEX_ECDHE_ECDSA", "KEX_ECDHE_RSA",
+];
+
 /// Apply the additive, feature-driven algorithm selection to `config`, using
 /// `is_active` to decide whether each `FEATURE_DEFINES` entry is enabled.
 ///
@@ -597,5 +616,13 @@ fn apply_ssl_content_len_overrides(config: &mut MbedtlsUserConfig) {
 pub fn prebuilt_features_config() -> MbedtlsUserConfig {
     let mut config = MbedtlsUserConfig::new();
     build_config(&mut config, |feature| PREBUILT_FEATURES.contains(&feature));
+    config
+}
+
+/// Build the configuration of the committed AmpKeeper ESP32-S3 artifacts.
+pub fn ampkeeper_s3_prebuilt_features_config() -> MbedtlsUserConfig {
+    let mut config = MbedtlsUserConfig::new();
+    build_config(&mut config, |feature| AMPKEEPER_S3_PREBUILT_FEATURES.contains(&feature));
+    config.set("SSL_OUT_CONTENT_LEN", "2048");
     config
 }

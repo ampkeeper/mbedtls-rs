@@ -375,8 +375,19 @@ impl MbedtlsBuilder {
     /// The config the committed prebuilt libraries/bindings were produced with:
     /// the [`features::PREBUILT_FEATURES`] algorithm set plus [`DEFAULT_HOOKS`].
     fn prebuilt_config() -> MbedtlsUserConfig {
-        let mut config = features::prebuilt_features_config();
-        DEFAULT_HOOKS
+        let ampkeeper_s3 = std::env::var_os("CARGO_FEATURE_AMPKEEPER_S3_PREBUILT").is_some()
+            && std::env::var("TARGET").as_deref() == Ok("xtensa-esp32s3-none-elf");
+        let mut config = if ampkeeper_s3 {
+            features::ampkeeper_s3_prebuilt_features_config()
+        } else {
+            features::prebuilt_features_config()
+        };
+        let hooks = if ampkeeper_s3 {
+            DEFAULT_HOOKS | Hook::Timer | Hook::WallClock
+        } else {
+            DEFAULT_HOOKS
+        };
+        hooks
             .iter()
             .for_each(|hook| hook.apply_to_config(&mut config));
         config
@@ -395,6 +406,12 @@ impl MbedtlsBuilder {
     /// Takes `hooks` directly so the build script can call it before
     /// constructing a full [`MbedtlsBuilder`].
     pub fn prebuilt_validity(hooks: EnumSet<Hook>) -> Result<(), String> {
+        let target = std::env::var("TARGET").unwrap_or_default();
+        let ampkeeper_s3 = std::env::var_os("CARGO_FEATURE_AMPKEEPER_S3_PREBUILT").is_some();
+        if target == "xtensa-esp32s3-none-elf" && !ampkeeper_s3 {
+            return Err("the committed ESP32-S3 artifacts use the AmpKeeper TLS client profile".into());
+        }
+
         let mut active = MbedtlsUserConfig::new();
         features::apply_features(&mut active);
         hooks

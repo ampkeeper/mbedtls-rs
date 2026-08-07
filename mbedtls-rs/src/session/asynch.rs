@@ -67,9 +67,27 @@ where
         stream: T,
         config: &SessionConfig<'a>,
     ) -> Result<Self, SessionError> {
+        Self::new_recoverable(tls, stream, config).map_err(|(_stream, error)| error)
+    }
+
+    /// Create a session, returning ownership of the stream if TLS setup fails.
+    ///
+    /// Embedded network stacks commonly require callers to explicitly abort sockets on every
+    /// error path. This variant permits that when allocating or configuring TLS state fails
+    /// before a `Session` can be constructed.
+    pub fn new_recoverable(
+        tls: TlsReference<'a>,
+        stream: T,
+        config: &SessionConfig<'a>,
+    ) -> Result<Self, (T, SessionError)> {
+        let state = match SessionState::new(config) {
+            Ok(state) => state,
+            Err(error) => return Err((stream, error.into())),
+        };
+
         Ok(Self {
             stream,
-            state: SessionState::new(config)?,
+            state,
             connected: false,
             eof: false,
             read_byte: None,
@@ -723,6 +741,9 @@ where
     async fn connect(&mut self, saved_session: Option<&SavedSession>) -> Result<(), SessionError> {
         debug!("Establishing SSL connection");
 
+        #[cfg(feature = "ecp-restartable")]
+        let mut crypto_yield_count = 0u32;
+
         merr!(unsafe { mbedtls_ssl_session_reset(self.ssl_context.as_ptr()) })?;
 
         if let Some(saved_session) = saved_session {
@@ -732,10 +753,23 @@ where
         }
 
         loop {
-            match self
-                .call_mbedtls(|ssl_ctx| unsafe { mbedtls_ssl_handshake(ssl_ctx) })
-                .await
-            {
+            let result = {
+                #[cfg(feature = "ecp-restartable")]
+                {
+                    self.call_mbedtls_restartable(
+                        |ssl_ctx| unsafe { mbedtls_ssl_handshake(ssl_ctx) },
+                        &mut crypto_yield_count,
+                    )
+                    .await
+                }
+                #[cfg(not(feature = "ecp-restartable"))]
+                {
+                    self.call_mbedtls(|ssl_ctx| unsafe { mbedtls_ssl_handshake(ssl_ctx) })
+                        .await
+                }
+            };
+
+            match result {
                 MBEDTLS_ERR_SSL_WANT_READ => {
                     if !self.wait_readable().await.map_err(SessionError::from_io)? {
                         return Err(SessionError::Io(ErrorKind::ConnectionReset));
@@ -750,6 +784,28 @@ where
                 MBEDTLS_ERR_SSL_RECEIVED_NEW_SESSION_TICKET => continue,
                 other => {
                     merr!(other)?;
+
+                    #[cfg(feature = "ecp-restartable")]
+                    unsafe {
+                        let version_ptr = mbedtls_ssl_get_version(self.ssl_context.as_ptr());
+                        let ciphersuite_ptr = mbedtls_ssl_get_ciphersuite(self.ssl_context.as_ptr());
+                        let version = if version_ptr.is_null() {
+                            "<unknown>"
+                        } else {
+                            CStr::from_ptr(version_ptr).to_str().unwrap_or("<invalid>")
+                        };
+                        let ciphersuite = if ciphersuite_ptr.is_null() {
+                            "<unknown>"
+                        } else {
+                            CStr::from_ptr(ciphersuite_ptr).to_str().unwrap_or("<invalid>")
+                        };
+                        info!(
+                            "MbedTLS handshake complete: {} cooperative crypto yield(s), version {}, ciphersuite {}",
+                            crypto_yield_count,
+                            version,
+                            ciphersuite,
+                        );
+                    }
                     break Ok(());
                 }
             }
@@ -982,6 +1038,47 @@ where
             }
 
             Poll::Ready(result)
+        })
+        .await
+    }
+
+    /// Call a restartable Mbed TLS handshake operation, yielding cooperatively
+    /// whenever its configured ECC operation budget is exhausted.
+    #[cfg(feature = "ecp-restartable")]
+    async fn call_mbedtls_restartable<F>(&mut self, mut f: F, crypto_yield_count: &mut u32) -> i32
+    where
+        F: FnMut(*mut mbedtls_ssl_context) -> i32,
+    {
+        poll_fn(|ctx| {
+            let mut io_ctx = MBioCallCtx { io: self, ctx };
+            let ssl_context = io_ctx.io.ssl_context.as_ptr();
+
+            unsafe {
+                mbedtls_ssl_set_bio(
+                    ssl_context,
+                    &mut io_ctx as *const _ as *mut MBioCallCtx<'_, '_, '_, T> as *mut c_void,
+                    Some(Self::raw_send),
+                    Some(Self::raw_receive),
+                    None,
+                );
+            }
+
+            let result = f(ssl_context);
+
+            unsafe {
+                mbedtls_ssl_set_bio(ssl_context, core::ptr::null_mut(), None, None, None);
+            }
+
+            if result == MBEDTLS_ERR_SSL_CRYPTO_IN_PROGRESS {
+                if *crypto_yield_count == 0 {
+                    info!("MbedTLS handshake: restartable ECC budget exhausted; yielding cooperatively");
+                }
+                *crypto_yield_count = crypto_yield_count.saturating_add(1);
+                io_ctx.ctx.waker().wake_by_ref();
+                Poll::Pending
+            } else {
+                Poll::Ready(result)
+            }
         })
         .await
     }

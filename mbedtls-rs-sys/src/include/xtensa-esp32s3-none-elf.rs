@@ -181,31 +181,13 @@ pub const MBEDTLS_AES_ALT_WORK_AREA_SIZE: u32 = 512;
 pub const MBEDTLS_SHA1_ALT_WORK_AREA_SIZE: u32 = 208;
 pub const MBEDTLS_SHA256_ALT_WORK_AREA_SIZE: u32 = 208;
 pub const MBEDTLS_SHA512_ALT_WORK_AREA_SIZE: u32 = 304;
-pub const PSA_WANT_ALG_MD5: u32 = 1;
-pub const PSA_WANT_ALG_RIPEMD160: u32 = 1;
-pub const PSA_WANT_ALG_SHA_1: u32 = 1;
+pub const MBEDTLS_SSL_OUT_CONTENT_LEN: u32 = 2048;
 pub const PSA_WANT_ALG_SHA_224: u32 = 1;
 pub const PSA_WANT_ALG_SHA_256: u32 = 1;
 pub const PSA_WANT_ALG_SHA_384: u32 = 1;
 pub const PSA_WANT_ALG_SHA_512: u32 = 1;
-pub const PSA_WANT_ECC_BRAINPOOL_P_R1_256: u32 = 1;
-pub const PSA_WANT_ECC_BRAINPOOL_P_R1_384: u32 = 1;
-pub const PSA_WANT_ECC_BRAINPOOL_P_R1_512: u32 = 1;
-pub const PSA_WANT_ECC_MONTGOMERY_255: u32 = 1;
-pub const PSA_WANT_ECC_MONTGOMERY_448: u32 = 1;
-pub const PSA_WANT_ECC_SECP_R1_192: u32 = 1;
-pub const PSA_WANT_ECC_SECP_R1_224: u32 = 1;
 pub const PSA_WANT_ECC_SECP_R1_256: u32 = 1;
 pub const PSA_WANT_ECC_SECP_R1_384: u32 = 1;
-pub const PSA_WANT_ECC_SECP_R1_521: u32 = 1;
-pub const PSA_WANT_ECC_SECP_K1_192: u32 = 1;
-pub const PSA_WANT_ECC_SECP_K1_256: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_ALG_CCM: u32 = 1;
-pub const PSA_WANT_ALG_CCM: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_ALG_CCM_STAR_NO_TAG: u32 = 1;
-pub const PSA_WANT_ALG_CCM_STAR_NO_TAG: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_ALG_CMAC: u32 = 1;
-pub const PSA_WANT_ALG_CMAC: u32 = 1;
 pub const MBEDTLS_PSA_BUILTIN_ALG_ECDH: u32 = 1;
 pub const PSA_WANT_ALG_ECDH: u32 = 1;
 pub const MBEDTLS_PSA_BUILTIN_ALG_ECDSA: u32 = 1;
@@ -225,28 +207,6 @@ pub const MBEDTLS_PSA_BUILTIN_KEY_TYPE_ECC_KEY_PAIR_GENERATE: u32 = 1;
 pub const MBEDTLS_PSA_BUILTIN_KEY_TYPE_ECC_KEY_PAIR_DERIVE: u32 = 1;
 pub const MBEDTLS_PSA_BUILTIN_KEY_TYPE_ECC_PUBLIC_KEY: u32 = 1;
 pub const PSA_WANT_KEY_TYPE_ECC_PUBLIC_KEY: u32 = 1;
-pub const PSA_WANT_KEY_TYPE_DH_KEY_PAIR_BASIC: u32 = 1;
-pub const PSA_WANT_KEY_TYPE_DH_KEY_PAIR_IMPORT: u32 = 1;
-pub const PSA_WANT_KEY_TYPE_DH_KEY_PAIR_EXPORT: u32 = 1;
-pub const PSA_WANT_KEY_TYPE_DH_KEY_PAIR_GENERATE: u32 = 1;
-pub const PSA_WANT_KEY_TYPE_DH_PUBLIC_KEY: u32 = 1;
-pub const PSA_WANT_ALG_FFDH: u32 = 1;
-pub const PSA_WANT_DH_RFC7919_2048: u32 = 1;
-pub const PSA_WANT_DH_RFC7919_3072: u32 = 1;
-pub const PSA_WANT_DH_RFC7919_4096: u32 = 1;
-pub const PSA_WANT_DH_RFC7919_6144: u32 = 1;
-pub const PSA_WANT_DH_RFC7919_8192: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_ALG_FFDH: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_KEY_TYPE_DH_KEY_PAIR_BASIC: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_KEY_TYPE_DH_KEY_PAIR_IMPORT: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_KEY_TYPE_DH_KEY_PAIR_EXPORT: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_KEY_TYPE_DH_KEY_PAIR_GENERATE: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_KEY_TYPE_DH_PUBLIC_KEY: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_DH_RFC7919_2048: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_DH_RFC7919_3072: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_DH_RFC7919_4096: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_DH_RFC7919_6144: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_DH_RFC7919_8192: u32 = 1;
 pub const MBEDTLS_PSA_BUILTIN_ALG_GCM: u32 = 1;
 pub const PSA_WANT_ALG_GCM: u32 = 1;
 pub const MBEDTLS_PSA_BUILTIN_ALG_HMAC: u32 = 1;
@@ -262,11 +222,6 @@ pub const MBEDTLS_PSA_BUILTIN_ALG_TLS12_PRF: u32 = 1;
 pub const PSA_WANT_ALG_TLS12_PRF: u32 = 1;
 pub const MBEDTLS_PSA_BUILTIN_ALG_TLS12_PSK_TO_MS: u32 = 1;
 pub const PSA_WANT_ALG_TLS12_PSK_TO_MS: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_ALG_MD5: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_PAKE: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_ALG_JPAKE: u32 = 1;
-pub const PSA_WANT_ALG_JPAKE: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_ALG_RIPEMD160: u32 = 1;
 pub const MBEDTLS_PSA_BUILTIN_ALG_RSA_PKCS1V15_CRYPT: u32 = 1;
 pub const PSA_WANT_ALG_RSA_PKCS1V15_CRYPT: u32 = 1;
 pub const MBEDTLS_PSA_BUILTIN_ALG_RSA_PKCS1V15_SIGN: u32 = 1;
@@ -284,56 +239,26 @@ pub const PSA_WANT_KEY_TYPE_RSA_KEY_PAIR_IMPORT: u32 = 1;
 pub const PSA_WANT_KEY_TYPE_RSA_KEY_PAIR_EXPORT: u32 = 1;
 pub const MBEDTLS_PSA_BUILTIN_KEY_TYPE_RSA_PUBLIC_KEY: u32 = 1;
 pub const PSA_WANT_KEY_TYPE_RSA_PUBLIC_KEY: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_ALG_SHA_1: u32 = 1;
 pub const MBEDTLS_PSA_BUILTIN_ALG_SHA_224: u32 = 1;
 pub const MBEDTLS_PSA_BUILTIN_ALG_SHA_256: u32 = 1;
 pub const MBEDTLS_PSA_BUILTIN_ALG_SHA_384: u32 = 1;
 pub const MBEDTLS_PSA_BUILTIN_ALG_SHA_512: u32 = 1;
 pub const PSA_WANT_KEY_TYPE_AES: u32 = 1;
 pub const MBEDTLS_PSA_BUILTIN_KEY_TYPE_AES: u32 = 1;
-pub const PSA_WANT_KEY_TYPE_ARIA: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_KEY_TYPE_ARIA: u32 = 1;
-pub const PSA_WANT_KEY_TYPE_CAMELLIA: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_KEY_TYPE_CAMELLIA: u32 = 1;
-pub const PSA_WANT_KEY_TYPE_DES: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_KEY_TYPE_DES: u32 = 1;
 pub const MBEDTLS_PSA_BUILTIN_ALG_TLS12_ECJPAKE_TO_PMS: u32 = 1;
 pub const PSA_WANT_ALG_TLS12_ECJPAKE_TO_PMS: u32 = 1;
-pub const PSA_WANT_KEY_TYPE_CHACHA20: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_KEY_TYPE_CHACHA20: u32 = 1;
-pub const PSA_WANT_ALG_STREAM_CIPHER: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_ALG_STREAM_CIPHER: u32 = 1;
-pub const PSA_WANT_ALG_CHACHA20_POLY1305: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_ALG_CHACHA20_POLY1305: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_ALG_CBC_NO_PADDING: u32 = 1;
-pub const PSA_WANT_ALG_CBC_NO_PADDING: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_ALG_CBC_PKCS7: u32 = 1;
-pub const PSA_WANT_ALG_CBC_PKCS7: u32 = 1;
 pub const MBEDTLS_PSA_BUILTIN_ALG_ECB_NO_PADDING: u32 = 1;
 pub const PSA_WANT_ALG_ECB_NO_PADDING: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_ALG_CFB: u32 = 1;
-pub const PSA_WANT_ALG_CFB: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_ALG_CTR: u32 = 1;
-pub const PSA_WANT_ALG_CTR: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_ALG_OFB: u32 = 1;
-pub const PSA_WANT_ALG_OFB: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_ECC_BRAINPOOL_P_R1_256: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_ECC_BRAINPOOL_P_R1_384: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_ECC_BRAINPOOL_P_R1_512: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_ECC_MONTGOMERY_255: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_ECC_MONTGOMERY_448: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_ECC_SECP_R1_192: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_ECC_SECP_R1_224: u32 = 1;
 pub const MBEDTLS_PSA_BUILTIN_ECC_SECP_R1_256: u32 = 1;
 pub const MBEDTLS_PSA_BUILTIN_ECC_SECP_R1_384: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_ECC_SECP_R1_521: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_ECC_SECP_K1_192: u32 = 1;
-pub const MBEDTLS_PSA_BUILTIN_ECC_SECP_K1_256: u32 = 1;
-pub const PSA_WANT_ALG_SOME_PAKE: u32 = 1;
 pub const PSA_WANT_KEY_TYPE_DERIVE: u32 = 1;
 pub const PSA_WANT_KEY_TYPE_PASSWORD: u32 = 1;
 pub const PSA_WANT_KEY_TYPE_PASSWORD_HASH: u32 = 1;
 pub const PSA_WANT_KEY_TYPE_RAW_DATA: u32 = 1;
+pub const MBEDTLS_PLATFORM_STD_EXIT_SUCCESS: u32 = 0;
+pub const MBEDTLS_PLATFORM_STD_EXIT_FAILURE: u32 = 1;
+pub const MBEDTLS_EXIT_SUCCESS: u32 = 0;
+pub const MBEDTLS_EXIT_FAILURE: u32 = 1;
 pub const MBEDTLS_AES_ENCRYPT: u32 = 1;
 pub const MBEDTLS_AES_DECRYPT: u32 = 0;
 pub const MBEDTLS_ERR_AES_INVALID_KEY_LENGTH: i32 = -32;
@@ -395,7 +320,7 @@ pub const MBEDTLS_CIPHER_VARIABLE_IV_LEN: u32 = 1;
 pub const MBEDTLS_CIPHER_VARIABLE_KEY_LEN: u32 = 2;
 pub const MBEDTLS_MAX_IV_LENGTH: u32 = 16;
 pub const MBEDTLS_MAX_BLOCK_LENGTH: u32 = 16;
-pub const MBEDTLS_MAX_KEY_LENGTH: u32 = 64;
+pub const MBEDTLS_MAX_KEY_LENGTH: u32 = 32;
 pub const MBEDTLS_KEY_BITLEN_SHIFT: u32 = 6;
 pub const MBEDTLS_IV_SIZE_SHIFT: u32 = 2;
 pub const MBEDTLS_CCM_DECRYPT: u32 = 0;
@@ -457,9 +382,13 @@ pub const MBEDTLS_ERR_ECP_IN_PROGRESS: i32 = -19200;
 pub const MBEDTLS_ECP_DP_MAX: u32 = 14;
 pub const MBEDTLS_ECP_WINDOW_SIZE: u32 = 4;
 pub const MBEDTLS_ECP_FIXED_POINT_OPTIM: u32 = 1;
-pub const MBEDTLS_ECP_MAX_BITS: u32 = 521;
-pub const MBEDTLS_ECP_MAX_BYTES: u32 = 66;
-pub const MBEDTLS_ECP_MAX_PT_LEN: u32 = 133;
+pub const MBEDTLS_ECP_MAX_BITS: u32 = 384;
+pub const MBEDTLS_ECP_MAX_BYTES: u32 = 48;
+pub const MBEDTLS_ECP_MAX_PT_LEN: u32 = 97;
+pub const MBEDTLS_ECP_OPS_CHK: u32 = 3;
+pub const MBEDTLS_ECP_OPS_DBL: u32 = 8;
+pub const MBEDTLS_ECP_OPS_ADD: u32 = 11;
+pub const MBEDTLS_ECP_OPS_INV: u32 = 120;
 pub const MBEDTLS_ECP_PF_UNCOMPRESSED: u32 = 0;
 pub const MBEDTLS_ECP_PF_COMPRESSED: u32 = 1;
 pub const MBEDTLS_ECP_TLS_NAMED_CURVE: u32 = 3;
@@ -488,8 +417,8 @@ pub const PSA_MAC_MAX_SIZE: u32 = 64;
 pub const PSA_AEAD_TAG_MAX_SIZE: u32 = 16;
 pub const PSA_VENDOR_RSA_MAX_KEY_BITS: u32 = 4096;
 pub const PSA_VENDOR_RSA_GENERATE_MIN_KEY_BITS: u32 = 1024;
-pub const PSA_VENDOR_FFDH_MAX_KEY_BITS: u32 = 8192;
-pub const PSA_VENDOR_ECC_MAX_CURVE_BITS: u32 = 521;
+pub const PSA_VENDOR_FFDH_MAX_KEY_BITS: u32 = 0;
+pub const PSA_VENDOR_ECC_MAX_CURVE_BITS: u32 = 384;
 pub const PSA_TLS12_PSK_TO_MS_PSK_MAX_SIZE: u32 = 128;
 pub const PSA_TLS12_ECJPAKE_TO_PMS_INPUT_SIZE: u32 = 65;
 pub const PSA_TLS12_ECJPAKE_TO_PMS_DATA_SIZE: u32 = 32;
@@ -813,16 +742,6 @@ pub const MBEDTLS_X509_RFC5280_MAX_SERIAL_LEN: u32 = 20;
 pub const MBEDTLS_X509_RFC5280_UTC_TIME_LEN: u32 = 15;
 pub const MBEDTLS_X509_MAX_FILE_PATH_LEN: u32 = 512;
 pub const MBEDTLS_X509_MAX_VERIFY_CHAIN_SIZE: u32 = 10;
-pub const MBEDTLS_ERR_DHM_BAD_INPUT_DATA: i32 = -12416;
-pub const MBEDTLS_ERR_DHM_READ_PARAMS_FAILED: i32 = -12544;
-pub const MBEDTLS_ERR_DHM_MAKE_PARAMS_FAILED: i32 = -12672;
-pub const MBEDTLS_ERR_DHM_READ_PUBLIC_FAILED: i32 = -12800;
-pub const MBEDTLS_ERR_DHM_MAKE_PUBLIC_FAILED: i32 = -12928;
-pub const MBEDTLS_ERR_DHM_CALC_SECRET_FAILED: i32 = -13056;
-pub const MBEDTLS_ERR_DHM_INVALID_FORMAT: i32 = -13184;
-pub const MBEDTLS_ERR_DHM_ALLOC_FAILED: i32 = -13312;
-pub const MBEDTLS_ERR_DHM_FILE_IO_ERROR: i32 = -13440;
-pub const MBEDTLS_ERR_DHM_SET_GROUP_FAILED: i32 = -13696;
 pub const MBEDTLS_ERR_SSL_CRYPTO_IN_PROGRESS: i32 = -28672;
 pub const MBEDTLS_ERR_SSL_FEATURE_UNAVAILABLE: i32 = -28800;
 pub const MBEDTLS_ERR_SSL_BAD_INPUT_DATA: i32 = -28928;
@@ -960,7 +879,6 @@ pub const MBEDTLS_SSL_EARLY_DATA_NO_DISCARD: u32 = 0;
 pub const MBEDTLS_SSL_EARLY_DATA_TRY_TO_DEPROTECT_AND_DISCARD: u32 = 1;
 pub const MBEDTLS_SSL_EARLY_DATA_DISCARD: u32 = 2;
 pub const MBEDTLS_SSL_IN_CONTENT_LEN: u32 = 16384;
-pub const MBEDTLS_SSL_OUT_CONTENT_LEN: u32 = 16384;
 pub const MBEDTLS_SSL_DTLS_MAX_BUFFERING: u32 = 32768;
 pub const MBEDTLS_SSL_CID_IN_LEN_MAX: u32 = 32;
 pub const MBEDTLS_SSL_CID_OUT_LEN_MAX: u32 = 32;
@@ -1093,10 +1011,18 @@ pub const MBEDTLS_SSL_TLS1_3_TICKET_ALLOW_PSK_RESUMPTION: u32 = 1;
 pub const MBEDTLS_SSL_TLS1_3_TICKET_ALLOW_PSK_EPHEMERAL_RESUMPTION: u32 = 4;
 pub const MBEDTLS_SSL_TLS1_3_TICKET_ALLOW_EARLY_DATA: u32 = 8;
 pub const MBEDTLS_SSL_TLS1_3_TICKET_FLAGS_MASK: u32 = 13;
-pub const MBEDTLS_SSL_UNEXPECTED_CID_IGNORE: u32 = 0;
-pub const MBEDTLS_SSL_UNEXPECTED_CID_FAIL: u32 = 1;
 pub const MBEDTLS_PRINTF_SIZET: &[u8; 3] = b"zu\0";
 pub const MBEDTLS_PRINTF_LONGLONG: &[u8; 4] = b"lld\0";
+pub const MBEDTLS_ERR_DHM_BAD_INPUT_DATA: i32 = -12416;
+pub const MBEDTLS_ERR_DHM_READ_PARAMS_FAILED: i32 = -12544;
+pub const MBEDTLS_ERR_DHM_MAKE_PARAMS_FAILED: i32 = -12672;
+pub const MBEDTLS_ERR_DHM_READ_PUBLIC_FAILED: i32 = -12800;
+pub const MBEDTLS_ERR_DHM_MAKE_PUBLIC_FAILED: i32 = -12928;
+pub const MBEDTLS_ERR_DHM_CALC_SECRET_FAILED: i32 = -13056;
+pub const MBEDTLS_ERR_DHM_INVALID_FORMAT: i32 = -13184;
+pub const MBEDTLS_ERR_DHM_ALLOC_FAILED: i32 = -13312;
+pub const MBEDTLS_ERR_DHM_FILE_IO_ERROR: i32 = -13440;
+pub const MBEDTLS_ERR_DHM_SET_GROUP_FAILED: i32 = -13696;
 pub const MBEDTLS_ERR_HKDF_BAD_INPUT_DATA: i32 = -24448;
 pub const MBEDTLS_ERR_HMAC_DRBG_REQUEST_TOO_BIG: i32 = -3;
 pub const MBEDTLS_ERR_HMAC_DRBG_INPUT_TOO_BIG: i32 = -5;
@@ -1367,7 +1293,57 @@ pub const MBEDTLS_SSL_CACHE_DEFAULT_MAX_ENTRIES: u32 = 50;
 pub const MBEDTLS_SSL_COOKIE_TIMEOUT: u32 = 60;
 pub const MBEDTLS_SSL_TICKET_MAX_KEY_BYTES: u32 = 32;
 pub const MBEDTLS_SSL_TICKET_KEY_NAME_BYTES: u32 = 4;
+pub type __int64_t = ::core::ffi::c_longlong;
+pub type __int_least64_t = ::core::ffi::c_longlong;
+pub type time_t = __int_least64_t;
+#[repr(C)]
+#[derive(Default, Copy, Clone)]
+pub struct tm {
+    pub tm_sec: ::core::ffi::c_int,
+    pub tm_min: ::core::ffi::c_int,
+    pub tm_hour: ::core::ffi::c_int,
+    pub tm_mday: ::core::ffi::c_int,
+    pub tm_mon: ::core::ffi::c_int,
+    pub tm_year: ::core::ffi::c_int,
+    pub tm_wday: ::core::ffi::c_int,
+    pub tm_yday: ::core::ffi::c_int,
+    pub tm_isdst: ::core::ffi::c_int,
+}
+unsafe extern "C" {
+    pub fn mbedtls_sec_time(timer: *mut time_t) -> time_t;
+}
 pub type mbedtls_iso_c_forbids_empty_translation_units = ::core::ffi::c_int;
+pub type mbedtls_time_t = time_t;
+pub type mbedtls_ms_time_t = i64;
+unsafe extern "C" {
+    /// \brief   Get time in milliseconds.
+    ///
+    /// \return Monotonically-increasing current time in milliseconds.
+    ///
+    /// \note Define MBEDTLS_PLATFORM_MS_TIME_ALT to be able to provide an
+    ///       alternative implementation
+    ///
+    /// \warning This function returns a monotonically-increasing time value from a
+    ///          start time that will differ from platform to platform, and possibly
+    ///          from run to run of the process.
+    pub fn mbedtls_ms_time() -> mbedtls_ms_time_t;
+}
+unsafe extern "C" {
+    pub static mut mbedtls_time:
+        ::core::option::Option<unsafe extern "C" fn(time: *mut mbedtls_time_t) -> mbedtls_time_t>;
+}
+unsafe extern "C" {
+    /// \brief   Set your own time function pointer
+    ///
+    /// \param   time_func   the time function implementation
+    ///
+    /// \return              0
+    pub fn mbedtls_platform_set_time(
+        time_func: ::core::option::Option<
+            unsafe extern "C" fn(time: *mut mbedtls_time_t) -> mbedtls_time_t,
+        >,
+    ) -> ::core::ffi::c_int;
+}
 unsafe extern "C" {
     pub fn mbedtls_calloc(n: usize, size: usize) -> *mut ::core::ffi::c_void;
 }
@@ -1504,6 +1480,33 @@ pub type mbedtls_f_rng_t = ::core::option::Option<
         output_size: usize,
     ) -> ::core::ffi::c_int,
 >;
+unsafe extern "C" {
+    /// \brief      Platform-specific implementation of gmtime_r()
+    ///
+    ///             The function is a thread-safe abstraction that behaves
+    ///             similarly to the gmtime_r() function from Unix/POSIX.
+    ///
+    ///             Mbed TLS will try to identify the underlying platform and
+    ///             make use of an appropriate underlying implementation (e.g.
+    ///             gmtime_r() for POSIX and gmtime_s() for Windows). If this is
+    ///             not possible, then gmtime() will be used. In this case, calls
+    ///             from the library to gmtime() will be guarded by the mutex
+    ///             mbedtls_threading_gmtime_mutex if MBEDTLS_THREADING_C is
+    ///             enabled. It is recommended that calls from outside the library
+    ///             are also guarded by this mutex.
+    ///
+    ///             If MBEDTLS_PLATFORM_GMTIME_R_ALT is defined, then Mbed TLS will
+    ///             unconditionally use the alternative implementation for
+    ///             mbedtls_platform_gmtime_r() supplied by the user at compile time.
+    ///
+    /// \param tt     Pointer to an object containing time (in seconds) since the
+    ///               epoch to be converted
+    /// \param tm_buf Pointer to an object where the results will be stored
+    ///
+    /// \return      Pointer to an object of type struct tm on success, otherwise
+    ///              NULL
+    pub fn mbedtls_platform_gmtime_r(tt: *const mbedtls_time_t, tm_buf: *mut tm) -> *mut tm;
+}
 #[repr(C)]
 #[repr(align(16))]
 #[derive(Copy, Clone)]
@@ -1511,22 +1514,6 @@ pub struct mbedtls_aes_context {
     pub work_area: [::core::ffi::c_uchar; 512usize],
 }
 impl Default for mbedtls_aes_context {
-    fn default() -> Self {
-        let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-        unsafe {
-            ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-            s.assume_init()
-        }
-    }
-}
-#[repr(C)]
-#[repr(align(16))]
-#[derive(Copy, Clone)]
-pub struct mbedtls_aes_xts_context {
-    pub crypt: mbedtls_aes_context,
-    pub tweak: mbedtls_aes_context,
-}
-impl Default for mbedtls_aes_xts_context {
     fn default() -> Self {
         let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
         unsafe {
@@ -1551,23 +1538,6 @@ unsafe extern "C" {
     ///                 If this is \c NULL, this function does nothing.
     ///                 Otherwise, the context must have been at least initialized.
     pub fn mbedtls_aes_free(ctx: *mut mbedtls_aes_context);
-}
-unsafe extern "C" {
-    /// \brief          This function initializes the specified AES XTS context.
-    ///
-    ///                 It must be the first API called before using
-    ///                 the context.
-    ///
-    /// \param ctx      The AES XTS context to initialize. This must not be \c NULL.
-    pub fn mbedtls_aes_xts_init(ctx: *mut mbedtls_aes_xts_context);
-}
-unsafe extern "C" {
-    /// \brief          This function releases and clears the specified AES XTS context.
-    ///
-    /// \param ctx      The AES XTS context to clear.
-    ///                 If this is \c NULL, this function does nothing.
-    ///                 Otherwise, the context must have been at least initialized.
-    pub fn mbedtls_aes_xts_free(ctx: *mut mbedtls_aes_xts_context);
 }
 unsafe extern "C" {
     /// \brief          This function sets the encryption key.
@@ -1610,48 +1580,6 @@ unsafe extern "C" {
     ) -> ::core::ffi::c_int;
 }
 unsafe extern "C" {
-    /// \brief          This function prepares an XTS context for encryption and
-    ///                 sets the encryption key.
-    ///
-    /// \param ctx      The AES XTS context to which the key should be bound.
-    ///                 It must be initialized.
-    /// \param key      The encryption key. This is comprised of the XTS key1
-    ///                 concatenated with the XTS key2.
-    ///                 This must be a readable buffer of size \p keybits bits.
-    /// \param keybits  The size of \p key passed in bits. Valid options are:
-    ///                 <ul><li>256 bits (each of key1 and key2 is a 128-bit key)</li>
-    ///                 <li>512 bits (each of key1 and key2 is a 256-bit key)</li></ul>
-    ///
-    /// \return         \c 0 on success.
-    /// \return         #MBEDTLS_ERR_AES_INVALID_KEY_LENGTH on failure.
-    pub fn mbedtls_aes_xts_setkey_enc(
-        ctx: *mut mbedtls_aes_xts_context,
-        key: *const ::core::ffi::c_uchar,
-        keybits: ::core::ffi::c_uint,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief          This function prepares an XTS context for decryption and
-    ///                 sets the decryption key.
-    ///
-    /// \param ctx      The AES XTS context to which the key should be bound.
-    ///                 It must be initialized.
-    /// \param key      The decryption key. This is comprised of the XTS key1
-    ///                 concatenated with the XTS key2.
-    ///                 This must be a readable buffer of size \p keybits bits.
-    /// \param keybits  The size of \p key passed in bits. Valid options are:
-    ///                 <ul><li>256 bits (each of key1 and key2 is a 128-bit key)</li>
-    ///                 <li>512 bits (each of key1 and key2 is a 256-bit key)</li></ul>
-    ///
-    /// \return         \c 0 on success.
-    /// \return         #MBEDTLS_ERR_AES_INVALID_KEY_LENGTH on failure.
-    pub fn mbedtls_aes_xts_setkey_dec(
-        ctx: *mut mbedtls_aes_xts_context,
-        key: *const ::core::ffi::c_uchar,
-        keybits: ::core::ffi::c_uint,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
     /// \brief          This function performs an AES single-block encryption or
     ///                 decryption operation.
     ///
@@ -1676,324 +1604,6 @@ unsafe extern "C" {
     pub fn mbedtls_aes_crypt_ecb(
         ctx: *mut mbedtls_aes_context,
         mode: ::core::ffi::c_int,
-        input: *const ::core::ffi::c_uchar,
-        output: *mut ::core::ffi::c_uchar,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief  This function performs an AES-CBC encryption or decryption operation
-    ///         on full blocks.
-    ///
-    ///         It performs the operation defined in the \p mode
-    ///         parameter (encrypt/decrypt), on the input data buffer defined in
-    ///         the \p input parameter.
-    ///
-    ///         It can be called as many times as needed, until all the input
-    ///         data is processed. mbedtls_aes_init(), and either
-    ///         mbedtls_aes_setkey_enc() or mbedtls_aes_setkey_dec() must be called
-    ///         before the first call to this API with the same context.
-    ///
-    /// \note   This function operates on full blocks, that is, the input size
-    ///         must be a multiple of the AES block size of \c 16 Bytes.
-    ///
-    /// \note   Upon exit, the content of the IV is updated so that you can
-    ///         call the same function again on the next
-    ///         block(s) of data and get the same result as if it was
-    ///         encrypted in one call. This allows a "streaming" usage.
-    ///         If you need to retain the contents of the IV, you should
-    ///         either save it manually or use the cipher module instead.
-    ///
-    ///
-    /// \param ctx      The AES context to use for encryption or decryption.
-    ///                 It must be initialized and bound to a key.
-    /// \param mode     The AES operation: #MBEDTLS_AES_ENCRYPT or
-    ///                 #MBEDTLS_AES_DECRYPT.
-    /// \param length   The length of the input data in Bytes. This must be a
-    ///                 multiple of the block size (\c 16 Bytes).
-    /// \param iv       Initialization vector (updated after use).
-    ///                 It must be a readable and writeable buffer of \c 16 Bytes.
-    /// \param input    The buffer holding the input data.
-    ///                 It must be readable and of size \p length Bytes.
-    /// \param output   The buffer holding the output data.
-    ///                 It must be writeable and of size \p length Bytes.
-    ///
-    /// \return         \c 0 on success.
-    /// \return         #MBEDTLS_ERR_AES_INVALID_INPUT_LENGTH
-    ///                 on failure.
-    pub fn mbedtls_aes_crypt_cbc(
-        ctx: *mut mbedtls_aes_context,
-        mode: ::core::ffi::c_int,
-        length: usize,
-        iv: *mut ::core::ffi::c_uchar,
-        input: *const ::core::ffi::c_uchar,
-        output: *mut ::core::ffi::c_uchar,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief      This function performs an AES-XTS encryption or decryption
-    ///             operation for an entire XTS data unit.
-    ///
-    ///             AES-XTS encrypts or decrypts blocks based on their location as
-    ///             defined by a data unit number. The data unit number must be
-    ///             provided by \p data_unit.
-    ///
-    ///             NIST SP 800-38E limits the maximum size of a data unit to 2^20
-    ///             AES blocks. If the data unit is larger than this, this function
-    ///             returns #MBEDTLS_ERR_AES_INVALID_INPUT_LENGTH.
-    ///
-    /// \param ctx          The AES XTS context to use for AES XTS operations.
-    ///                     It must be initialized and bound to a key.
-    /// \param mode         The AES operation: #MBEDTLS_AES_ENCRYPT or
-    ///                     #MBEDTLS_AES_DECRYPT.
-    /// \param length       The length of a data unit in Bytes. This can be any
-    ///                     length between 16 bytes and 2^24 bytes inclusive
-    ///                     (between 1 and 2^20 block cipher blocks).
-    /// \param data_unit    The address of the data unit encoded as an array of 16
-    ///                     bytes in little-endian format. For disk encryption, this
-    ///                     is typically the index of the block device sector that
-    ///                     contains the data.
-    /// \param input        The buffer holding the input data (which is an entire
-    ///                     data unit). This function reads \p length Bytes from \p
-    ///                     input.
-    /// \param output       The buffer holding the output data (which is an entire
-    ///                     data unit). This function writes \p length Bytes to \p
-    ///                     output.
-    ///
-    /// \return             \c 0 on success.
-    /// \return             #MBEDTLS_ERR_AES_INVALID_INPUT_LENGTH if \p length is
-    ///                     smaller than an AES block in size (16 Bytes) or if \p
-    ///                     length is larger than 2^20 blocks (16 MiB).
-    pub fn mbedtls_aes_crypt_xts(
-        ctx: *mut mbedtls_aes_xts_context,
-        mode: ::core::ffi::c_int,
-        length: usize,
-        data_unit: *const ::core::ffi::c_uchar,
-        input: *const ::core::ffi::c_uchar,
-        output: *mut ::core::ffi::c_uchar,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief This function performs an AES-CFB128 encryption or decryption
-    ///        operation.
-    ///
-    ///        It performs the operation defined in the \p mode
-    ///        parameter (encrypt or decrypt), on the input data buffer
-    ///        defined in the \p input parameter.
-    ///
-    ///        For CFB, you must set up the context with mbedtls_aes_setkey_enc(),
-    ///        regardless of whether you are performing an encryption or decryption
-    ///        operation, that is, regardless of the \p mode parameter. This is
-    ///        because CFB mode uses the same key schedule for encryption and
-    ///        decryption.
-    ///
-    /// \note  Upon exit, the content of the IV is updated so that you can
-    ///        call the same function again on the next
-    ///        block(s) of data and get the same result as if it was
-    ///        encrypted in one call. This allows a "streaming" usage.
-    ///        If you need to retain the contents of the
-    ///        IV, you must either save it manually or use the cipher
-    ///        module instead.
-    ///
-    ///
-    /// \param ctx      The AES context to use for encryption or decryption.
-    ///                 It must be initialized and bound to a key.
-    /// \param mode     The AES operation: #MBEDTLS_AES_ENCRYPT or
-    ///                 #MBEDTLS_AES_DECRYPT.
-    /// \param length   The length of the input data in Bytes.
-    /// \param iv_off   The offset in IV (updated after use).
-    ///                 It must point to a valid \c size_t.
-    /// \param iv       The initialization vector (updated after use).
-    ///                 It must be a readable and writeable buffer of \c 16 Bytes.
-    /// \param input    The buffer holding the input data.
-    ///                 It must be readable and of size \p length Bytes.
-    /// \param output   The buffer holding the output data.
-    ///                 It must be writeable and of size \p length Bytes.
-    ///
-    /// \return         \c 0 on success.
-    pub fn mbedtls_aes_crypt_cfb128(
-        ctx: *mut mbedtls_aes_context,
-        mode: ::core::ffi::c_int,
-        length: usize,
-        iv_off: *mut usize,
-        iv: *mut ::core::ffi::c_uchar,
-        input: *const ::core::ffi::c_uchar,
-        output: *mut ::core::ffi::c_uchar,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief This function performs an AES-CFB8 encryption or decryption
-    ///        operation.
-    ///
-    ///        It performs the operation defined in the \p mode
-    ///        parameter (encrypt/decrypt), on the input data buffer defined
-    ///        in the \p input parameter.
-    ///
-    ///        Due to the nature of CFB, you must use the same key schedule for
-    ///        both encryption and decryption operations. Therefore, you must
-    ///        use the context initialized with mbedtls_aes_setkey_enc() for
-    ///        both #MBEDTLS_AES_ENCRYPT and #MBEDTLS_AES_DECRYPT.
-    ///
-    /// \note  Upon exit, the content of the IV is updated so that you can
-    ///        call the same function again on the next
-    ///        block(s) of data and get the same result as if it was
-    ///        encrypted in one call. This allows a "streaming" usage.
-    ///        If you need to retain the contents of the
-    ///        IV, you should either save it manually or use the cipher
-    ///        module instead.
-    ///
-    ///
-    /// \param ctx      The AES context to use for encryption or decryption.
-    ///                 It must be initialized and bound to a key.
-    /// \param mode     The AES operation: #MBEDTLS_AES_ENCRYPT or
-    ///                 #MBEDTLS_AES_DECRYPT
-    /// \param length   The length of the input data.
-    /// \param iv       The initialization vector (updated after use).
-    ///                 It must be a readable and writeable buffer of \c 16 Bytes.
-    /// \param input    The buffer holding the input data.
-    ///                 It must be readable and of size \p length Bytes.
-    /// \param output   The buffer holding the output data.
-    ///                 It must be writeable and of size \p length Bytes.
-    ///
-    /// \return         \c 0 on success.
-    pub fn mbedtls_aes_crypt_cfb8(
-        ctx: *mut mbedtls_aes_context,
-        mode: ::core::ffi::c_int,
-        length: usize,
-        iv: *mut ::core::ffi::c_uchar,
-        input: *const ::core::ffi::c_uchar,
-        output: *mut ::core::ffi::c_uchar,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief       This function performs an AES-OFB (Output Feedback Mode)
-    ///              encryption or decryption operation.
-    ///
-    ///              For OFB, you must set up the context with
-    ///              mbedtls_aes_setkey_enc(), regardless of whether you are
-    ///              performing an encryption or decryption operation. This is
-    ///              because OFB mode uses the same key schedule for encryption and
-    ///              decryption.
-    ///
-    ///              The OFB operation is identical for encryption or decryption,
-    ///              therefore no operation mode needs to be specified.
-    ///
-    /// \note        Upon exit, the content of iv, the Initialisation Vector, is
-    ///              updated so that you can call the same function again on the next
-    ///              block(s) of data and get the same result as if it was encrypted
-    ///              in one call. This allows a "streaming" usage, by initialising
-    ///              iv_off to 0 before the first call, and preserving its value
-    ///              between calls.
-    ///
-    ///              For non-streaming use, the iv should be initialised on each call
-    ///              to a unique value, and iv_off set to 0 on each call.
-    ///
-    ///              If you need to retain the contents of the initialisation vector,
-    ///              you must either save it manually or use the cipher module
-    ///              instead.
-    ///
-    /// \warning     For the OFB mode, the initialisation vector must be unique
-    ///              every encryption operation. Reuse of an initialisation vector
-    ///              will compromise security.
-    ///
-    /// \param ctx      The AES context to use for encryption or decryption.
-    ///                 It must be initialized and bound to a key.
-    /// \param length   The length of the input data.
-    /// \param iv_off   The offset in IV (updated after use).
-    ///                 It must point to a valid \c size_t.
-    /// \param iv       The initialization vector (updated after use).
-    ///                 It must be a readable and writeable buffer of \c 16 Bytes.
-    /// \param input    The buffer holding the input data.
-    ///                 It must be readable and of size \p length Bytes.
-    /// \param output   The buffer holding the output data.
-    ///                 It must be writeable and of size \p length Bytes.
-    ///
-    /// \return         \c 0 on success.
-    pub fn mbedtls_aes_crypt_ofb(
-        ctx: *mut mbedtls_aes_context,
-        length: usize,
-        iv_off: *mut usize,
-        iv: *mut ::core::ffi::c_uchar,
-        input: *const ::core::ffi::c_uchar,
-        output: *mut ::core::ffi::c_uchar,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief      This function performs an AES-CTR encryption or decryption
-    ///             operation.
-    ///
-    ///             Due to the nature of CTR, you must use the same key schedule
-    ///             for both encryption and decryption operations. Therefore, you
-    ///             must use the context initialized with mbedtls_aes_setkey_enc()
-    ///             for both #MBEDTLS_AES_ENCRYPT and #MBEDTLS_AES_DECRYPT.
-    ///
-    /// \warning    You must never reuse a nonce value with the same key. Doing so
-    ///             would void the encryption for the two messages encrypted with
-    ///             the same nonce and key.
-    ///
-    ///             There are two common strategies for managing nonces with CTR:
-    ///
-    ///             1. You can handle everything as a single message processed over
-    ///             successive calls to this function. In that case, you want to
-    ///             set \p nonce_counter and \p nc_off to 0 for the first call, and
-    ///             then preserve the values of \p nonce_counter, \p nc_off and \p
-    ///             stream_block across calls to this function as they will be
-    ///             updated by this function.
-    ///
-    ///             With this strategy, you must not encrypt more than 2**128
-    ///             blocks of data with the same key.
-    ///
-    ///             2. You can encrypt separate messages by dividing the \p
-    ///             nonce_counter buffer in two areas: the first one used for a
-    ///             per-message nonce, handled by yourself, and the second one
-    ///             updated by this function internally.
-    ///
-    ///             For example, you might reserve the first 12 bytes for the
-    ///             per-message nonce, and the last 4 bytes for internal use. In that
-    ///             case, before calling this function on a new message you need to
-    ///             set the first 12 bytes of \p nonce_counter to your chosen nonce
-    ///             value, the last 4 to 0, and \p nc_off to 0 (which will cause \p
-    ///             stream_block to be ignored). That way, you can encrypt at most
-    ///             2**96 messages of up to 2**32 blocks each with the same key.
-    ///
-    ///             The per-message nonce (or information sufficient to reconstruct
-    ///             it) needs to be communicated with the ciphertext and must be unique.
-    ///             The recommended way to ensure uniqueness is to use a message
-    ///             counter. An alternative is to generate random nonces, but this
-    ///             limits the number of messages that can be securely encrypted:
-    ///             for example, with 96-bit random nonces, you should not encrypt
-    ///             more than 2**32 messages with the same key.
-    ///
-    ///             Note that for both strategies, sizes are measured in blocks and
-    ///             that an AES block is 16 bytes.
-    ///
-    /// \warning    Upon return, \p stream_block contains sensitive data. Its
-    ///             content must not be written to insecure storage and should be
-    ///             securely discarded as soon as it's no longer needed.
-    ///
-    /// \param ctx              The AES context to use for encryption or decryption.
-    ///                         It must be initialized and bound to a key.
-    /// \param length           The length of the input data.
-    /// \param nc_off           The offset in the current \p stream_block, for
-    ///                         resuming within the current cipher stream. The
-    ///                         offset pointer should be 0 at the start of a stream.
-    ///                         It must point to a valid \c size_t.
-    /// \param nonce_counter    The 128-bit nonce and counter.
-    ///                         It must be a readable-writeable buffer of \c 16 Bytes.
-    /// \param stream_block     The saved stream block for resuming. This is
-    ///                         overwritten by the function.
-    ///                         It must be a readable-writeable buffer of \c 16 Bytes.
-    /// \param input            The buffer holding the input data.
-    ///                         It must be readable and of size \p length Bytes.
-    /// \param output           The buffer holding the output data.
-    ///                         It must be writeable and of size \p length Bytes.
-    ///
-    /// \return                 \c 0 on success.
-    pub fn mbedtls_aes_crypt_ctr(
-        ctx: *mut mbedtls_aes_context,
-        length: usize,
-        nc_off: *mut usize,
-        nonce_counter: *mut ::core::ffi::c_uchar,
-        stream_block: *mut ::core::ffi::c_uchar,
         input: *const ::core::ffi::c_uchar,
         output: *mut ::core::ffi::c_uchar,
     ) -> ::core::ffi::c_int;
@@ -4401,19 +4011,6 @@ pub struct mbedtls_cipher_context_t {
     /// Operation that the key of the context has been
     /// initialized for.
     pub private_operation: mbedtls_operation_t,
-    /// Padding functions to use, if relevant for
-    /// the specific cipher mode.
-    pub private_add_padding: ::core::option::Option<
-        unsafe extern "C" fn(output: *mut ::core::ffi::c_uchar, olen: usize, data_len: usize),
-    >,
-    pub private_get_padding: ::core::option::Option<
-        unsafe extern "C" fn(
-            input: *mut ::core::ffi::c_uchar,
-            ilen: usize,
-            data_len: *mut usize,
-            invalid_padding: *mut usize,
-        ) -> ::core::ffi::c_int,
-    >,
     /// Buffer for input that has not been processed yet.
     pub private_unprocessed_data: [::core::ffi::c_uchar; 16usize],
     /// Number of Bytes that have not been processed yet.
@@ -4425,8 +4022,6 @@ pub struct mbedtls_cipher_context_t {
     pub private_iv_size: usize,
     /// The cipher-specific context.
     pub private_cipher_ctx: *mut ::core::ffi::c_void,
-    /// CMAC-specific context.
-    pub private_cmac_ctx: *mut mbedtls_cmac_context_t,
 }
 impl Default for mbedtls_cipher_context_t {
     fn default() -> Self {
@@ -4563,25 +4158,6 @@ unsafe extern "C" {
         key: *const ::core::ffi::c_uchar,
         key_bitlen: ::core::ffi::c_int,
         operation: mbedtls_operation_t,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief               This function sets the padding mode, for cipher modes
-    ///                      that use padding.
-    ///
-    ///
-    /// \param ctx           The generic cipher context. This must be initialized and
-    ///                      bound to a cipher information structure.
-    /// \param mode          The padding mode.
-    ///
-    /// \return              \c 0 on success.
-    /// \return              #MBEDTLS_ERR_CIPHER_FEATURE_UNAVAILABLE
-    ///                      if the selected padding mode is not supported.
-    /// \return              #MBEDTLS_ERR_CIPHER_BAD_INPUT_DATA if the cipher mode
-    ///                      does not support padding.
-    pub fn mbedtls_cipher_set_padding_mode(
-        ctx: *mut mbedtls_cipher_context_t,
-        mode: mbedtls_cipher_padding_t,
     ) -> ::core::ffi::c_int;
 }
 unsafe extern "C" {
@@ -7356,7 +6932,62 @@ impl Default for mbedtls_ecp_group {
         }
     }
 }
-pub type mbedtls_ecp_restart_ctx = ::core::ffi::c_void;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct mbedtls_ecp_restart_mul {
+    _unused: [u8; 0],
+}
+/// \brief           Internal restart context for multiplication
+///
+/// \note            Opaque struct
+pub type mbedtls_ecp_restart_mul_ctx = mbedtls_ecp_restart_mul;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct mbedtls_ecp_restart_muladd {
+    _unused: [u8; 0],
+}
+/// \brief           Internal restart context for ecp_muladd()
+///
+/// \note            Opaque struct
+pub type mbedtls_ecp_restart_muladd_ctx = mbedtls_ecp_restart_muladd;
+/// \brief           General context for resuming ECC operations
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct mbedtls_ecp_restart_ctx {
+    ///<  current ops count
+    pub private_ops_done: ::core::ffi::c_uint,
+    ///<  call depth (0 = top-level)
+    pub private_depth: ::core::ffi::c_uint,
+    ///<  ecp_mul_comb() sub-context
+    pub private_rsm: *mut mbedtls_ecp_restart_mul_ctx,
+    ///<  ecp_muladd() sub-context
+    pub private_ma: *mut mbedtls_ecp_restart_muladd_ctx,
+}
+impl Default for mbedtls_ecp_restart_ctx {
+    fn default() -> Self {
+        let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+unsafe extern "C" {
+    /// \brief           Internal; for restartable functions in other modules.
+    ///                  Check and update basic ops budget.
+    ///
+    /// \param grp       Group structure
+    /// \param rs_ctx    Restart context
+    /// \param ops       Number of basic ops to do
+    ///
+    /// \return          \c 0 if doing \p ops basic ops is still allowed,
+    /// \return          #MBEDTLS_ERR_ECP_IN_PROGRESS otherwise.
+    pub fn mbedtls_ecp_check_budget(
+        grp: *const mbedtls_ecp_group,
+        rs_ctx: *mut mbedtls_ecp_restart_ctx,
+        ops: ::core::ffi::c_uint,
+    ) -> ::core::ffi::c_int;
+}
 /// \brief    The ECP key-pair structure.
 ///
 /// A generic key-pair that may be used for ECDSA and fixed ECDH, for example.
@@ -7381,6 +7012,77 @@ impl Default for mbedtls_ecp_keypair {
             s.assume_init()
         }
     }
+}
+unsafe extern "C" {
+    /// \brief           Set the maximum number of basic operations done in a row.
+    ///
+    ///                  If more operations are needed to complete a computation,
+    ///                  #MBEDTLS_ERR_ECP_IN_PROGRESS will be returned by the
+    ///                  function performing the computation. It is then the
+    ///                  caller's responsibility to either call again with the same
+    ///                  parameters until it returns 0 or an error code; or to free
+    ///                  the restart context if the operation is to be aborted.
+    ///
+    ///                  It is strictly required that all input parameters and the
+    ///                  restart context be the same on successive calls for the
+    ///                  same operation, but output parameters need not be the
+    ///                  same; they must not be used until the function finally
+    ///                  returns 0.
+    ///
+    ///                  This only applies to functions whose documentation
+    ///                  mentions they may return #MBEDTLS_ERR_ECP_IN_PROGRESS (or
+    ///                  #MBEDTLS_ERR_SSL_CRYPTO_IN_PROGRESS for functions in the
+    ///                  SSL module). For functions that accept a "restart context"
+    ///                  argument, passing NULL disables restart and makes the
+    ///                  function equivalent to the function with the same name
+    ///                  with \c _restartable removed. For functions in the ECDH
+    ///                  module, restart is disabled unless the function accepts
+    ///                  an "ECDH context" argument and
+    ///                  mbedtls_ecdh_enable_restart() was previously called on
+    ///                  that context. For function in the SSL module, restart is
+    ///                  only enabled for specific sides and key exchanges
+    ///                  (currently only for clients and ECDHE-ECDSA).
+    ///
+    /// \warning         Using the PSA interruptible interfaces with keys in local
+    ///                  storage and no accelerator driver will also call this
+    ///                  function to set the values specified via those interfaces,
+    ///                  overwriting values previously set. Care should be taken if
+    ///                  mixing these two interfaces.
+    ///
+    /// \param max_ops   Maximum number of basic operations done in a row.
+    ///                  Default: 0 (unlimited).
+    ///                  Lower (non-zero) values mean ECC functions will block for
+    ///                  a lesser maximum amount of time.
+    ///
+    /// \note            A "basic operation" is defined as a rough equivalent of a
+    ///                  multiplication in GF(p) for the NIST P-256 curve.
+    ///                  As an indication, with default settings, a scalar
+    ///                  multiplication (full run of \c mbedtls_ecp_mul()) is:
+    ///                  - about 3300 basic operations for P-256
+    ///                  - about 9400 basic operations for P-384
+    ///
+    /// \note            Very low values are not always respected: sometimes
+    ///                  functions need to block for a minimum number of
+    ///                  operations, and will do so even if max_ops is set to a
+    ///                  lower value.  That minimum depends on the curve size, and
+    ///                  can be made lower by decreasing the value of
+    ///                  \c MBEDTLS_ECP_WINDOW_SIZE.  As an indication, here is the
+    ///                  lowest effective value for various curves and values of
+    ///                  that parameter (w for short):
+    ///                          w=6     w=5     w=4     w=3     w=2
+    ///                  P-256   208     208     160     136     124
+    ///                  P-384   682     416     320     272     248
+    ///                  P-521  1364     832     640     544     496
+    ///
+    /// \note            This setting is currently ignored by Curve25519.
+    pub fn mbedtls_ecp_set_max_ops(max_ops: ::core::ffi::c_uint);
+}
+unsafe extern "C" {
+    /// \brief           Check if restart is enabled (max_ops != 0)
+    ///
+    /// \return          \c 0 if \c max_ops == 0 (restart disabled)
+    /// \return          \c 1 otherwise (restart enabled)
+    pub fn mbedtls_ecp_restart_is_enabled() -> ::core::ffi::c_int;
 }
 unsafe extern "C" {
     pub fn mbedtls_ecp_get_type(grp: *const mbedtls_ecp_group) -> mbedtls_ecp_curve_type;
@@ -7490,6 +7192,21 @@ unsafe extern "C" {
     ///                  case this function returns immediately. If it is not
     ///                  \c NULL, it must point to an initialized ECP key pair.
     pub fn mbedtls_ecp_keypair_free(key: *mut mbedtls_ecp_keypair);
+}
+unsafe extern "C" {
+    /// \brief           Initialize a restart context.
+    ///
+    /// \param ctx       The restart context to initialize. This must
+    ///                  not be \c NULL.
+    pub fn mbedtls_ecp_restart_init(ctx: *mut mbedtls_ecp_restart_ctx);
+}
+unsafe extern "C" {
+    /// \brief           Free the components of a restart context.
+    ///
+    /// \param ctx       The restart context to free. This may be \c NULL, in which
+    ///                  case this function returns immediately. If it is not
+    ///                  \c NULL, it must point to an initialized restart context.
+    pub fn mbedtls_ecp_restart_free(ctx: *mut mbedtls_ecp_restart_ctx);
 }
 unsafe extern "C" {
     /// \brief           This function copies the contents of point \p Q into
@@ -9455,7 +9172,56 @@ unsafe extern "C" {
 ///                  "mbedtls_eckey_info" where ECDSA sign/verify functions
 ///                  are used also for EC key)
 pub type mbedtls_ecdsa_context = mbedtls_ecp_keypair;
-pub type mbedtls_ecdsa_restart_ctx = ::core::ffi::c_void;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct mbedtls_ecdsa_restart_ver {
+    _unused: [u8; 0],
+}
+/// \brief           Internal restart context for ecdsa_verify()
+///
+/// \note            Opaque struct, defined in ecdsa.c
+pub type mbedtls_ecdsa_restart_ver_ctx = mbedtls_ecdsa_restart_ver;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct mbedtls_ecdsa_restart_sig {
+    _unused: [u8; 0],
+}
+/// \brief           Internal restart context for ecdsa_sign()
+///
+/// \note            Opaque struct, defined in ecdsa.c
+pub type mbedtls_ecdsa_restart_sig_ctx = mbedtls_ecdsa_restart_sig;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct mbedtls_ecdsa_restart_det {
+    _unused: [u8; 0],
+}
+/// \brief           Internal restart context for ecdsa_sign_det()
+///
+/// \note            Opaque struct, defined in ecdsa.c
+pub type mbedtls_ecdsa_restart_det_ctx = mbedtls_ecdsa_restart_det;
+/// \brief           General context for resuming ECDSA operations
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct mbedtls_ecdsa_restart_ctx {
+    ///<  base context for ECP restart and
+    ///shared administrative info
+    pub private_ecp: mbedtls_ecp_restart_ctx,
+    ///<  ecdsa_verify() sub-context
+    pub private_ver: *mut mbedtls_ecdsa_restart_ver_ctx,
+    ///<  ecdsa_sign() sub-context
+    pub private_sig: *mut mbedtls_ecdsa_restart_sig_ctx,
+    ///<  ecdsa_sign_det() sub-context
+    pub private_det: *mut mbedtls_ecdsa_restart_det_ctx,
+}
+impl Default for mbedtls_ecdsa_restart_ctx {
+    fn default() -> Self {
+        let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
 unsafe extern "C" {
     /// \brief          This function checks whether a given group can be used
     ///                 for ECDSA.
@@ -10014,6 +9780,21 @@ unsafe extern "C" {
     ///                  in which case this function does nothing. If it
     ///                  is not \c NULL, it must be initialized.
     pub fn mbedtls_ecdsa_free(ctx: *mut mbedtls_ecdsa_context);
+}
+unsafe extern "C" {
+    /// \brief           Initialize a restart context.
+    ///
+    /// \param ctx       The restart context to initialize.
+    ///                  This must not be \c NULL.
+    pub fn mbedtls_ecdsa_restart_init(ctx: *mut mbedtls_ecdsa_restart_ctx);
+}
+unsafe extern "C" {
+    /// \brief           Free the components of a restart context.
+    ///
+    /// \param ctx       The restart context to free. This may be \c NULL,
+    ///                  in which case this function does nothing. If it
+    ///                  is not \c NULL, it must be initialized.
+    pub fn mbedtls_ecdsa_restart_free(ctx: *mut mbedtls_ecdsa_restart_ctx);
 }
 /// The type of the context passed to mbedtls_psa_external_get_random().
 ///
@@ -11256,9 +11037,6 @@ pub struct mbedtls_psa_hash_operation_t {
 #[derive(Copy, Clone)]
 pub union mbedtls_psa_hash_operation_t__bindgen_ty_1 {
     pub dummy: ::core::ffi::c_uint,
-    pub md5: mbedtls_md5_context,
-    pub ripemd160: mbedtls_ripemd160_context,
-    pub sha1: mbedtls_sha1_context,
     pub sha256: mbedtls_sha256_context,
     pub sha512: mbedtls_sha512_context,
 }
@@ -11848,7 +11626,6 @@ pub struct mbedtls_psa_mac_operation_t {
 pub union mbedtls_psa_mac_operation_t__bindgen_ty_1 {
     pub private_dummy: ::core::ffi::c_uint,
     pub private_hmac: mbedtls_psa_hmac_operation_t,
-    pub private_cmac: mbedtls_cipher_context_t,
 }
 impl Default for mbedtls_psa_mac_operation_t__bindgen_ty_1 {
     fn default() -> Self {
@@ -11882,9 +11659,7 @@ pub struct mbedtls_psa_aead_operation_t {
 #[derive(Copy, Clone)]
 pub union mbedtls_psa_aead_operation_t__bindgen_ty_1 {
     pub dummy: ::core::ffi::c_uint,
-    pub private_ccm: mbedtls_ccm_context,
     pub private_gcm: mbedtls_gcm_context,
-    pub private_chachapoly: mbedtls_chachapoly_context,
 }
 impl Default for mbedtls_psa_aead_operation_t__bindgen_ty_1 {
     fn default() -> Self {
@@ -11951,14 +11726,45 @@ impl mbedtls_psa_aead_operation_t {
     }
 }
 #[repr(C)]
-#[derive(Default, Copy, Clone)]
+#[derive(Copy, Clone)]
 pub struct mbedtls_psa_sign_hash_interruptible_operation_t {
-    pub private_dummy: ::core::ffi::c_uint,
+    pub private_ctx: *mut mbedtls_ecdsa_context,
+    pub private_restart_ctx: mbedtls_ecdsa_restart_ctx,
+    pub private_num_ops: u32,
+    pub private_coordinate_bytes: usize,
+    pub private_alg: psa_algorithm_t,
+    pub private_md_alg: mbedtls_md_type_t,
+    pub private_hash: [u8; 48usize],
+    pub private_hash_length: usize,
+}
+impl Default for mbedtls_psa_sign_hash_interruptible_operation_t {
+    fn default() -> Self {
+        let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
 }
 #[repr(C)]
-#[derive(Default, Copy, Clone)]
+#[derive(Copy, Clone)]
 pub struct mbedtls_psa_verify_hash_interruptible_operation_t {
-    pub private_dummy: ::core::ffi::c_uint,
+    pub private_ctx: *mut mbedtls_ecdsa_context,
+    pub private_restart_ctx: mbedtls_ecdsa_restart_ctx,
+    pub private_num_ops: u32,
+    pub private_hash: [u8; 48usize],
+    pub private_hash_length: usize,
+    pub private_r: mbedtls_mpi,
+    pub private_s: mbedtls_mpi,
+}
+impl Default for mbedtls_psa_verify_hash_interruptible_operation_t {
+    fn default() -> Self {
+        let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
 }
 ///< Client
 pub const mbedtls_ecjpake_role_MBEDTLS_ECJPAKE_CLIENT: mbedtls_ecjpake_role = 0;
@@ -12239,17 +12045,12 @@ pub struct mbedtls_psa_pake_operation_t {
     pub private_alg: psa_algorithm_t,
     pub private_password: *mut u8,
     pub private_password_len: usize,
-    pub private_role: mbedtls_ecjpake_role,
-    pub private_buffer: [u8; 336usize],
-    pub private_buffer_length: usize,
-    pub private_buffer_offset: usize,
     pub private_ctx: mbedtls_psa_pake_operation_t__bindgen_ty_1,
 }
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub union mbedtls_psa_pake_operation_t__bindgen_ty_1 {
     pub private_dummy: ::core::ffi::c_uint,
-    pub private_jpake: mbedtls_ecjpake_context,
 }
 impl Default for mbedtls_psa_pake_operation_t__bindgen_ty_1 {
     fn default() -> Self {
@@ -18071,7 +17872,6 @@ pub struct psa_pake_operation_s {
 #[derive(Copy, Clone)]
 pub union psa_pake_operation_s__bindgen_ty_1 {
     pub private_dummy: u8,
-    pub private_jpake: psa_jpake_computation_stage_s,
 }
 impl Default for psa_pake_operation_s__bindgen_ty_1 {
     fn default() -> Self {
@@ -18823,7 +18623,24 @@ impl Default for mbedtls_pk_context {
         }
     }
 }
-pub type mbedtls_pk_restart_ctx = ::core::ffi::c_void;
+/// \brief           Context for resuming operations
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct mbedtls_pk_restart_ctx {
+    ///< Public key information
+    pub private_pk_info: *const mbedtls_pk_info_t,
+    ///< Underlying restart context
+    pub private_rs_ctx: *mut ::core::ffi::c_void,
+}
+impl Default for mbedtls_pk_restart_ctx {
+    fn default() -> Self {
+        let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
 /// \brief           Types for RSA-alt abstraction
 pub type mbedtls_pk_rsa_alt_decrypt_func = ::core::option::Option<
     unsafe extern "C" fn(
@@ -18873,6 +18690,20 @@ unsafe extern "C" {
     ///                  PSA key and you still need to call psa_destroy_key()
     ///                  independently if you want to destroy that key.
     pub fn mbedtls_pk_free(ctx: *mut mbedtls_pk_context);
+}
+unsafe extern "C" {
+    /// \brief           Initialize a restart context
+    ///
+    /// \param ctx       The context to initialize.
+    ///                  This must not be \c NULL.
+    pub fn mbedtls_pk_restart_init(ctx: *mut mbedtls_pk_restart_ctx);
+}
+unsafe extern "C" {
+    /// \brief           Free the components of a restart context
+    ///
+    /// \param ctx       The context to clear. It must have been initialized.
+    ///                  If this is \c NULL, this function does nothing.
+    pub fn mbedtls_pk_restart_free(ctx: *mut mbedtls_pk_restart_ctx);
 }
 unsafe extern "C" {
     /// \brief           Initialize a PK context with the information given
@@ -19633,36 +19464,6 @@ unsafe extern "C" {
     ) -> ::core::ffi::c_int;
 }
 unsafe extern "C" {
-    /// \brief           Write a public key to a PEM string
-    ///
-    /// \param ctx       PK context which must contain a valid public or private key.
-    /// \param buf       Buffer to write to. The output includes a
-    ///                  terminating null byte.
-    /// \param size      Size of the buffer in bytes.
-    ///
-    /// \return          0 if successful, or a specific error code
-    pub fn mbedtls_pk_write_pubkey_pem(
-        ctx: *const mbedtls_pk_context,
-        buf: *mut ::core::ffi::c_uchar,
-        size: usize,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief           Write a private key to a PKCS#1 or SEC1 PEM string
-    ///
-    /// \param ctx       PK context which must contain a valid private key.
-    /// \param buf       Buffer to write to. The output includes a
-    ///                  terminating null byte.
-    /// \param size      Size of the buffer in bytes.
-    ///
-    /// \return          0 if successful, or a specific error code
-    pub fn mbedtls_pk_write_key_pem(
-        ctx: *const mbedtls_pk_context,
-        buf: *mut ::core::ffi::c_uchar,
-        size: usize,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
     /// \brief           Parse a SubjectPublicKeyInfo DER structure
     ///
     /// \param p         the position in the ASN.1 data
@@ -19974,6 +19775,19 @@ unsafe extern "C" {
     pub fn mbedtls_x509_time_cmp(
         t1: *const mbedtls_x509_time,
         t2: *const mbedtls_x509_time,
+    ) -> ::core::ffi::c_int;
+}
+unsafe extern "C" {
+    /// \brief          Fill mbedtls_x509_time with provided mbedtls_time_t.
+    ///
+    /// \param tt       mbedtls_time_t to convert
+    /// \param now      mbedtls_x509_time to fill with converted mbedtls_time_t
+    ///
+    /// \return         \c 0 on success
+    /// \return         A non-zero return value on failure.
+    pub fn mbedtls_x509_time_gmtime(
+        tt: mbedtls_time_t,
+        now: *mut mbedtls_x509_time,
     ) -> ::core::ffi::c_int;
 }
 unsafe extern "C" {
@@ -20405,7 +20219,33 @@ impl Default for mbedtls_x509_crt_verify_chain {
         }
     }
 }
-pub type mbedtls_x509_crt_restart_ctx = ::core::ffi::c_void;
+/// \brief       Context for resuming X.509 verify operations
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct mbedtls_x509_crt_restart_ctx {
+    pub private_pk: mbedtls_pk_restart_ctx,
+    pub private_parent: *mut mbedtls_x509_crt,
+    pub private_fallback_parent: *mut mbedtls_x509_crt,
+    pub private_fallback_signature_is_good: ::core::ffi::c_int,
+    pub private_parent_is_trusted: ::core::ffi::c_int,
+    pub private_in_progress: mbedtls_x509_crt_restart_ctx__bindgen_ty_1,
+    pub private_self_cnt: ::core::ffi::c_int,
+    pub private_ver_chain: mbedtls_x509_crt_verify_chain,
+}
+pub const mbedtls_x509_crt_restart_ctx_x509_crt_rs_none:
+    mbedtls_x509_crt_restart_ctx__bindgen_ty_1 = 0;
+pub const mbedtls_x509_crt_restart_ctx_x509_crt_rs_find_parent:
+    mbedtls_x509_crt_restart_ctx__bindgen_ty_1 = 1;
+pub type mbedtls_x509_crt_restart_ctx__bindgen_ty_1 = ::core::ffi::c_uint;
+impl Default for mbedtls_x509_crt_restart_ctx {
+    fn default() -> Self {
+        let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
 unsafe extern "C" {
     /// Default security profile. Should provide a good balance between security
     /// and compatibility with current deployments.
@@ -20948,6 +20788,14 @@ unsafe extern "C" {
     pub fn mbedtls_x509_crt_free(crt: *mut mbedtls_x509_crt);
 }
 unsafe extern "C" {
+    /// \brief           Initialize a restart context
+    pub fn mbedtls_x509_crt_restart_init(ctx: *mut mbedtls_x509_crt_restart_ctx);
+}
+unsafe extern "C" {
+    /// \brief           Free the components of a restart context
+    pub fn mbedtls_x509_crt_restart_free(ctx: *mut mbedtls_x509_crt_restart_ctx);
+}
+unsafe extern "C" {
     /// \brief               Access the ca_istrue field
     ///
     /// \param[in] crt       Certificate to be queried, must not be \c NULL
@@ -20957,596 +20805,19 @@ unsafe extern "C" {
     ///                      the Optional Basic Constraint extension.
     pub fn mbedtls_x509_crt_get_ca_istrue(crt: *const mbedtls_x509_crt) -> ::core::ffi::c_int;
 }
-unsafe extern "C" {
-    /// \brief           Initialize a CRT writing context
-    ///
-    /// \param ctx       CRT context to initialize
-    pub fn mbedtls_x509write_crt_init(ctx: *mut mbedtls_x509write_cert);
-}
-unsafe extern "C" {
-    /// \brief           Set the version for a Certificate
-    ///                  Default: MBEDTLS_X509_CRT_VERSION_3
-    ///
-    /// \param ctx       CRT context to use
-    /// \param version   version to set (MBEDTLS_X509_CRT_VERSION_1, MBEDTLS_X509_CRT_VERSION_2 or
-    ///                                  MBEDTLS_X509_CRT_VERSION_3)
-    pub fn mbedtls_x509write_crt_set_version(
-        ctx: *mut mbedtls_x509write_cert,
-        version: ::core::ffi::c_int,
-    );
-}
-unsafe extern "C" {
-    /// \brief           Set the serial number for a Certificate.
-    ///
-    /// \param ctx          CRT context to use
-    /// \param serial       A raw array of bytes containing the serial number in big
-    ///                     endian format
-    /// \param serial_len   Length of valid bytes (expressed in bytes) in \p serial
-    ///                     input buffer
-    ///
-    /// \return          0 if successful, or
-    ///                  MBEDTLS_ERR_X509_BAD_INPUT_DATA if the provided input buffer
-    ///                  is too big (longer than MBEDTLS_X509_RFC5280_MAX_SERIAL_LEN)
-    pub fn mbedtls_x509write_crt_set_serial_raw(
-        ctx: *mut mbedtls_x509write_cert,
-        serial: *mut ::core::ffi::c_uchar,
-        serial_len: usize,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief           Set the validity period for a Certificate
-    ///                  Timestamps should be in string format for UTC timezone
-    ///                  i.e. "YYYYMMDDhhmmss"
-    ///                  e.g. "20131231235959" for December 31st 2013
-    ///                       at 23:59:59
-    ///
-    /// \param ctx       CRT context to use
-    /// \param not_before    not_before timestamp
-    /// \param not_after     not_after timestamp
-    ///
-    /// \return          0 if timestamp was parsed successfully, or
-    ///                  a specific error code
-    pub fn mbedtls_x509write_crt_set_validity(
-        ctx: *mut mbedtls_x509write_cert,
-        not_before: *const ::core::ffi::c_char,
-        not_after: *const ::core::ffi::c_char,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief           Set the issuer name for a Certificate
-    ///                  Issuer names should contain a comma-separated list
-    ///                  of OID types and values:
-    ///                  e.g. "C=UK,O=ARM,CN=Mbed TLS CA"
-    ///
-    /// \param ctx           CRT context to use
-    /// \param issuer_name   issuer name to set
-    ///
-    /// \return          0 if issuer name was parsed successfully, or
-    ///                  a specific error code
-    pub fn mbedtls_x509write_crt_set_issuer_name(
-        ctx: *mut mbedtls_x509write_cert,
-        issuer_name: *const ::core::ffi::c_char,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief           Set the subject name for a Certificate
-    ///                  Subject names should contain a comma-separated list
-    ///                  of OID types and values:
-    ///                  e.g. "C=UK,O=ARM,CN=Mbed TLS Server 1"
-    ///
-    /// \param ctx           CRT context to use
-    /// \param subject_name  subject name to set
-    ///
-    /// \return          0 if subject name was parsed successfully, or
-    ///                  a specific error code
-    pub fn mbedtls_x509write_crt_set_subject_name(
-        ctx: *mut mbedtls_x509write_cert,
-        subject_name: *const ::core::ffi::c_char,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief           Set the subject public key for the certificate
-    ///
-    /// \param ctx       CRT context to use
-    /// \param key       public key to include
-    pub fn mbedtls_x509write_crt_set_subject_key(
-        ctx: *mut mbedtls_x509write_cert,
-        key: *mut mbedtls_pk_context,
-    );
-}
-unsafe extern "C" {
-    /// \brief           Set the issuer key used for signing the certificate
-    ///
-    /// \param ctx       CRT context to use
-    /// \param key       private key to sign with
-    pub fn mbedtls_x509write_crt_set_issuer_key(
-        ctx: *mut mbedtls_x509write_cert,
-        key: *mut mbedtls_pk_context,
-    );
-}
-unsafe extern "C" {
-    /// \brief           Set the MD algorithm to use for the signature
-    ///                  (e.g. MBEDTLS_MD_SHA1)
-    ///
-    /// \param ctx       CRT context to use
-    /// \param md_alg    MD algorithm to use
-    pub fn mbedtls_x509write_crt_set_md_alg(
-        ctx: *mut mbedtls_x509write_cert,
-        md_alg: mbedtls_md_type_t,
-    );
-}
-unsafe extern "C" {
-    /// \brief           Generic function to add to or replace an extension in the
-    ///                  CRT
-    ///
-    /// \param ctx       CRT context to use
-    /// \param oid       OID of the extension
-    /// \param oid_len   length of the OID
-    /// \param critical  if the extension is critical (per the RFC's definition)
-    /// \param val       value of the extension OCTET STRING
-    /// \param val_len   length of the value data
-    ///
-    /// \return          0 if successful, or a MBEDTLS_ERR_X509_ALLOC_FAILED
-    pub fn mbedtls_x509write_crt_set_extension(
-        ctx: *mut mbedtls_x509write_cert,
-        oid: *const ::core::ffi::c_char,
-        oid_len: usize,
-        critical: ::core::ffi::c_int,
-        val: *const ::core::ffi::c_uchar,
-        val_len: usize,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief           Set the basicConstraints extension for a CRT
-    ///
-    /// \param ctx       CRT context to use
-    /// \param is_ca     is this a CA certificate
-    /// \param max_pathlen   maximum length of certificate chains below this
-    ///                      certificate (only for CA certificates, -1 is
-    ///                      unlimited)
-    ///
-    /// \return          0 if successful, or a MBEDTLS_ERR_X509_ALLOC_FAILED
-    pub fn mbedtls_x509write_crt_set_basic_constraints(
-        ctx: *mut mbedtls_x509write_cert,
-        is_ca: ::core::ffi::c_int,
-        max_pathlen: ::core::ffi::c_int,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief           Set the subjectKeyIdentifier extension for a CRT
-    ///                  Requires that mbedtls_x509write_crt_set_subject_key() has been
-    ///                  called before
-    ///
-    /// \param ctx       CRT context to use
-    ///
-    /// \return          0 if successful, or a MBEDTLS_ERR_X509_ALLOC_FAILED
-    pub fn mbedtls_x509write_crt_set_subject_key_identifier(
-        ctx: *mut mbedtls_x509write_cert,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief           Set the authorityKeyIdentifier extension for a CRT
-    ///                  Requires that mbedtls_x509write_crt_set_issuer_key() has been
-    ///                  called before
-    ///
-    /// \param ctx       CRT context to use
-    ///
-    /// \return          0 if successful, or a MBEDTLS_ERR_X509_ALLOC_FAILED
-    pub fn mbedtls_x509write_crt_set_authority_key_identifier(
-        ctx: *mut mbedtls_x509write_cert,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief           Set the Key Usage Extension flags
-    ///                  (e.g. MBEDTLS_X509_KU_DIGITAL_SIGNATURE | MBEDTLS_X509_KU_KEY_CERT_SIGN)
-    ///
-    /// \param ctx       CRT context to use
-    /// \param key_usage key usage flags to set
-    ///
-    /// \return          0 if successful, or MBEDTLS_ERR_X509_ALLOC_FAILED
-    pub fn mbedtls_x509write_crt_set_key_usage(
-        ctx: *mut mbedtls_x509write_cert,
-        key_usage: ::core::ffi::c_uint,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief           Set the Extended Key Usage Extension
-    ///                  (e.g. MBEDTLS_OID_SERVER_AUTH)
-    ///
-    /// \param ctx       CRT context to use
-    /// \param exts      extended key usage extensions to set, a sequence of
-    ///                  MBEDTLS_ASN1_OID objects
-    ///
-    /// \return          0 if successful, or MBEDTLS_ERR_X509_ALLOC_FAILED
-    pub fn mbedtls_x509write_crt_set_ext_key_usage(
-        ctx: *mut mbedtls_x509write_cert,
-        exts: *const mbedtls_asn1_sequence,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief           Set the Netscape Cert Type flags
-    ///                  (e.g. MBEDTLS_X509_NS_CERT_TYPE_SSL_CLIENT | MBEDTLS_X509_NS_CERT_TYPE_EMAIL)
-    ///
-    /// \param ctx           CRT context to use
-    /// \param ns_cert_type  Netscape Cert Type flags to set
-    ///
-    /// \return          0 if successful, or MBEDTLS_ERR_X509_ALLOC_FAILED
-    pub fn mbedtls_x509write_crt_set_ns_cert_type(
-        ctx: *mut mbedtls_x509write_cert,
-        ns_cert_type: ::core::ffi::c_uchar,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief           Free the contents of a CRT write context
-    ///
-    /// \param ctx       CRT context to free
-    pub fn mbedtls_x509write_crt_free(ctx: *mut mbedtls_x509write_cert);
-}
-unsafe extern "C" {
-    /// \brief           Write a built up certificate to a X509 DER structure
-    ///                  Note: data is written at the end of the buffer! Use the
-    ///                        return value to determine where you should start
-    ///                        using the buffer
-    ///
-    /// \param ctx       certificate to write away
-    /// \param buf       buffer to write to
-    /// \param size      size of the buffer
-    /// \param f_rng     RNG function. This must not be \c NULL.
-    /// \param p_rng     RNG parameter
-    ///
-    /// \return          length of data written if successful, or a specific
-    ///                  error code
-    ///
-    /// \note            \p f_rng is used for the signature operation.
-    pub fn mbedtls_x509write_crt_der(
-        ctx: *mut mbedtls_x509write_cert,
-        buf: *mut ::core::ffi::c_uchar,
-        size: usize,
-        f_rng: mbedtls_f_rng_t,
-        p_rng: *mut ::core::ffi::c_void,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief           Write a built up certificate to a X509 PEM string
-    ///
-    /// \param ctx       certificate to write away
-    /// \param buf       buffer to write to
-    /// \param size      size of the buffer
-    /// \param f_rng     RNG function. This must not be \c NULL.
-    /// \param p_rng     RNG parameter
-    ///
-    /// \return          0 if successful, or a specific error code
-    ///
-    /// \note            \p f_rng is used for the signature operation.
-    pub fn mbedtls_x509write_crt_pem(
-        ctx: *mut mbedtls_x509write_cert,
-        buf: *mut ::core::ffi::c_uchar,
-        size: usize,
-        f_rng: mbedtls_f_rng_t,
-        p_rng: *mut ::core::ffi::c_void,
-    ) -> ::core::ffi::c_int;
-}
-///<  The prime modulus.
-pub const mbedtls_dhm_parameter_MBEDTLS_DHM_PARAM_P: mbedtls_dhm_parameter = 0;
-///<  The generator.
-pub const mbedtls_dhm_parameter_MBEDTLS_DHM_PARAM_G: mbedtls_dhm_parameter = 1;
-///<  Our secret value.
-pub const mbedtls_dhm_parameter_MBEDTLS_DHM_PARAM_X: mbedtls_dhm_parameter = 2;
-///<  Our public key = \c G^X mod \c P.
-pub const mbedtls_dhm_parameter_MBEDTLS_DHM_PARAM_GX: mbedtls_dhm_parameter = 3;
-///<  The public key of the peer = \c G^Y mod \c P.
-pub const mbedtls_dhm_parameter_MBEDTLS_DHM_PARAM_GY: mbedtls_dhm_parameter = 4;
-///<  The shared secret = \c G^(XY) mod \c P.
-pub const mbedtls_dhm_parameter_MBEDTLS_DHM_PARAM_K: mbedtls_dhm_parameter = 5;
-/// Which parameter to access in mbedtls_dhm_get_value().
-pub type mbedtls_dhm_parameter = ::core::ffi::c_uint;
-/// \brief          The DHM context structure.
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub struct mbedtls_dhm_context {
-    ///<  The prime modulus.
-    pub private_P: mbedtls_mpi,
-    ///<  The generator.
-    pub private_G: mbedtls_mpi,
-    ///<  Our secret value.
-    pub private_X: mbedtls_mpi,
-    ///<  Our public key = \c G^X mod \c P.
-    pub private_GX: mbedtls_mpi,
-    ///<  The public key of the peer = \c G^Y mod \c P.
-    pub private_GY: mbedtls_mpi,
-    ///<  The shared secret = \c G^(XY) mod \c P.
-    pub private_K: mbedtls_mpi,
-    ///<  The cached value = \c R^2 mod \c P.
-    pub private_RP: mbedtls_mpi,
-    ///<  The blinding value.
-    pub private_Vi: mbedtls_mpi,
-    ///<  The unblinding value.
-    pub private_Vf: mbedtls_mpi,
-    ///<  The previous \c X.
-    pub private_pX: mbedtls_mpi,
-}
-impl Default for mbedtls_dhm_context {
-    fn default() -> Self {
-        let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-        unsafe {
-            ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-            s.assume_init()
-        }
-    }
-}
-unsafe extern "C" {
-    /// \brief          This function initializes the DHM context.
-    ///
-    /// \param ctx      The DHM context to initialize.
-    pub fn mbedtls_dhm_init(ctx: *mut mbedtls_dhm_context);
-}
-unsafe extern "C" {
-    /// \brief          This function parses the DHM parameters in a
-    ///                 TLS ServerKeyExchange handshake message
-    ///                 (DHM modulus, generator, and public key).
-    ///
-    /// \note           In a TLS handshake, this is the how the client
-    ///                 sets up its DHM context from the server's public
-    ///                 DHM key material.
-    ///
-    /// \param ctx      The DHM context to use. This must be initialized.
-    /// \param p        On input, *p must be the start of the input buffer.
-    ///                 On output, *p is updated to point to the end of the data
-    ///                 that has been read. On success, this is the first byte
-    ///                 past the end of the ServerKeyExchange parameters.
-    ///                 On error, this is the point at which an error has been
-    ///                 detected, which is usually not useful except to debug
-    ///                 failures.
-    /// \param end      The end of the input buffer.
-    ///
-    /// \return         \c 0 on success.
-    /// \return         An \c MBEDTLS_ERR_DHM_XXX error code on failure.
-    pub fn mbedtls_dhm_read_params(
-        ctx: *mut mbedtls_dhm_context,
-        p: *mut *mut ::core::ffi::c_uchar,
-        end: *const ::core::ffi::c_uchar,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief          This function generates a DHM key pair and exports its
-    ///                 public part together with the DHM parameters in the format
-    ///                 used in a TLS ServerKeyExchange handshake message.
-    ///
-    /// \note           This function assumes that the DHM parameters \c ctx->P
-    ///                 and \c ctx->G have already been properly set. For that, use
-    ///                 mbedtls_dhm_set_group() below in conjunction with
-    ///                 mbedtls_mpi_read_binary() and mbedtls_mpi_read_string().
-    ///
-    /// \note           In a TLS handshake, this is the how the server generates
-    ///                 and exports its DHM key material.
-    ///
-    /// \param ctx      The DHM context to use. This must be initialized
-    ///                 and have the DHM parameters set. It may or may not
-    ///                 already have imported the peer's public key.
-    /// \param x_size   The private key size in Bytes.
-    /// \param olen     The address at which to store the number of Bytes
-    ///                 written on success. This must not be \c NULL.
-    /// \param output   The destination buffer. This must be a writable buffer of
-    ///                 sufficient size to hold the reduced binary presentation of
-    ///                 the modulus, the generator and the public key, each wrapped
-    ///                 with a 2-byte length field. It is the responsibility of the
-    ///                 caller to ensure that enough space is available. Refer to
-    ///                 mbedtls_mpi_size() to computing the byte-size of an MPI.
-    /// \param f_rng    The RNG function. Must not be \c NULL.
-    /// \param p_rng    The RNG context to be passed to \p f_rng. This may be
-    ///                 \c NULL if \p f_rng doesn't need a context parameter.
-    ///
-    /// \return         \c 0 on success.
-    /// \return         An \c MBEDTLS_ERR_DHM_XXX error code on failure.
-    pub fn mbedtls_dhm_make_params(
-        ctx: *mut mbedtls_dhm_context,
-        x_size: ::core::ffi::c_int,
-        output: *mut ::core::ffi::c_uchar,
-        olen: *mut usize,
-        f_rng: mbedtls_f_rng_t,
-        p_rng: *mut ::core::ffi::c_void,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief          This function sets the prime modulus and generator.
-    ///
-    /// \note           This function can be used to set \c ctx->P, \c ctx->G
-    ///                 in preparation for mbedtls_dhm_make_params().
-    ///
-    /// \param ctx      The DHM context to configure. This must be initialized.
-    /// \param P        The MPI holding the DHM prime modulus. This must be
-    ///                 an initialized MPI.
-    /// \param G        The MPI holding the DHM generator. This must be an
-    ///                 initialized MPI.
-    ///
-    /// \return         \c 0 if successful.
-    /// \return         An \c MBEDTLS_ERR_DHM_XXX error code on failure.
-    pub fn mbedtls_dhm_set_group(
-        ctx: *mut mbedtls_dhm_context,
-        P: *const mbedtls_mpi,
-        G: *const mbedtls_mpi,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief          This function imports the raw public value of the peer.
-    ///
-    /// \note           In a TLS handshake, this is the how the server imports
-    ///                 the Client's public DHM key.
-    ///
-    /// \param ctx      The DHM context to use. This must be initialized and have
-    ///                 its DHM parameters set, e.g. via mbedtls_dhm_set_group().
-    ///                 It may or may not already have generated its own private key.
-    /// \param input    The input buffer containing the \c G^Y value of the peer.
-    ///                 This must be a readable buffer of size \p ilen Bytes.
-    /// \param ilen     The size of the input buffer \p input in Bytes.
-    ///
-    /// \return         \c 0 on success.
-    /// \return         An \c MBEDTLS_ERR_DHM_XXX error code on failure.
-    pub fn mbedtls_dhm_read_public(
-        ctx: *mut mbedtls_dhm_context,
-        input: *const ::core::ffi::c_uchar,
-        ilen: usize,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief          This function creates a DHM key pair and exports
-    ///                 the raw public key in big-endian format.
-    ///
-    /// \note           The destination buffer is always fully written
-    ///                 so as to contain a big-endian representation of G^X mod P.
-    ///                 If it is larger than \c ctx->len, it is padded accordingly
-    ///                 with zero-bytes at the beginning.
-    ///
-    /// \param ctx      The DHM context to use. This must be initialized and
-    ///                 have the DHM parameters set. It may or may not already
-    ///                 have imported the peer's public key.
-    /// \param x_size   The private key size in Bytes.
-    /// \param output   The destination buffer. This must be a writable buffer of
-    ///                 size \p olen Bytes.
-    /// \param olen     The length of the destination buffer. This must be at least
-    ///                 equal to `ctx->len` (the size of \c P).
-    /// \param f_rng    The RNG function. This must not be \c NULL.
-    /// \param p_rng    The RNG context to be passed to \p f_rng. This may be \c NULL
-    ///                 if \p f_rng doesn't need a context argument.
-    ///
-    /// \return         \c 0 on success.
-    /// \return         An \c MBEDTLS_ERR_DHM_XXX error code on failure.
-    pub fn mbedtls_dhm_make_public(
-        ctx: *mut mbedtls_dhm_context,
-        x_size: ::core::ffi::c_int,
-        output: *mut ::core::ffi::c_uchar,
-        olen: usize,
-        f_rng: mbedtls_f_rng_t,
-        p_rng: *mut ::core::ffi::c_void,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief          This function derives and exports the shared secret
-    ///                 \c (G^Y)^X mod \c P.
-    ///
-    /// \note           If \p f_rng is not \c NULL, it is used to blind the input as
-    ///                 a countermeasure against timing attacks. Blinding is used
-    ///                 only if our private key \c X is re-used, and not used
-    ///                 otherwise. We recommend always passing a non-NULL
-    ///                 \p f_rng argument.
-    ///
-    /// \param ctx           The DHM context to use. This must be initialized
-    ///                      and have its own private key generated and the peer's
-    ///                      public key imported.
-    /// \param output        The buffer to write the generated shared key to. This
-    ///                      must be a writable buffer of size \p output_size Bytes.
-    /// \param output_size   The size of the destination buffer. This must be at
-    ///                      least the size of \c ctx->len (the size of \c P).
-    /// \param olen          On exit, holds the actual number of Bytes written.
-    /// \param f_rng         The RNG function. Must not be \c NULL. Used for
-    ///                      blinding.
-    /// \param p_rng         The RNG context to be passed to \p f_rng. This may be
-    ///                      \c NULL if \p f_rng doesn't need a context parameter.
-    ///
-    /// \return              \c 0 on success.
-    /// \return              An \c MBEDTLS_ERR_DHM_XXX error code on failure.
-    pub fn mbedtls_dhm_calc_secret(
-        ctx: *mut mbedtls_dhm_context,
-        output: *mut ::core::ffi::c_uchar,
-        output_size: usize,
-        olen: *mut usize,
-        f_rng: mbedtls_f_rng_t,
-        p_rng: *mut ::core::ffi::c_void,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief          This function returns the size of the prime modulus in bits.
-    ///
-    /// \param ctx      The DHM context to query.
-    ///
-    /// \return         The size of the prime modulus in bits,
-    ///                 i.e. the number n such that 2^(n-1) <= P < 2^n.
-    pub fn mbedtls_dhm_get_bitlen(ctx: *const mbedtls_dhm_context) -> usize;
-}
-unsafe extern "C" {
-    /// \brief          This function returns the size of the prime modulus in bytes.
-    ///
-    /// \param ctx      The DHM context to query.
-    ///
-    /// \return         The size of the prime modulus in bytes,
-    ///                 i.e. the number n such that 2^(8*(n-1)) <= P < 2^(8*n).
-    pub fn mbedtls_dhm_get_len(ctx: *const mbedtls_dhm_context) -> usize;
-}
-unsafe extern "C" {
-    /// \brief          This function copies a parameter of a DHM key.
-    ///
-    /// \param ctx      The DHM context to query.
-    /// \param param    The parameter to copy.
-    /// \param dest     The MPI object to copy the value into. It must be
-    ///                 initialized.
-    ///
-    /// \return         \c 0 on success.
-    /// \return         #MBEDTLS_ERR_DHM_BAD_INPUT_DATA if \p param is invalid.
-    /// \return         An \c MBEDTLS_ERR_MPI_XXX error code if the copy fails.
-    pub fn mbedtls_dhm_get_value(
-        ctx: *const mbedtls_dhm_context,
-        param: mbedtls_dhm_parameter,
-        dest: *mut mbedtls_mpi,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief          This function frees and clears the components
-    ///                 of a DHM context.
-    ///
-    /// \param ctx      The DHM context to free and clear. This may be \c NULL,
-    ///                 in which case this function is a no-op. If it is not \c NULL,
-    ///                 it must point to an initialized DHM context.
-    pub fn mbedtls_dhm_free(ctx: *mut mbedtls_dhm_context);
-}
-unsafe extern "C" {
-    /// \brief             This function parses DHM parameters in PEM or DER format.
-    ///
-    /// \param dhm         The DHM context to import the DHM parameters into.
-    ///                    This must be initialized.
-    /// \param dhmin       The input buffer. This must be a readable buffer of
-    ///                    length \p dhminlen Bytes.
-    /// \param dhminlen    The size of the input buffer \p dhmin, including the
-    ///                    terminating \c NULL Byte for PEM data.
-    ///
-    /// \return            \c 0 on success.
-    /// \return            An \c MBEDTLS_ERR_DHM_XXX or \c MBEDTLS_ERR_PEM_XXX error
-    ///                    code on failure.
-    pub fn mbedtls_dhm_parse_dhm(
-        dhm: *mut mbedtls_dhm_context,
-        dhmin: *const ::core::ffi::c_uchar,
-        dhminlen: usize,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief          The DMH checkup routine.
-    ///
-    /// \return         \c 0 on success.
-    /// \return         \c 1 on failure.
-    pub fn mbedtls_dhm_self_test(verbose: ::core::ffi::c_int) -> ::core::ffi::c_int;
-}
 ///< Our key.
 pub const mbedtls_ecdh_side_MBEDTLS_ECDH_OURS: mbedtls_ecdh_side = 0;
 ///< The key of the peer.
 pub const mbedtls_ecdh_side_MBEDTLS_ECDH_THEIRS: mbedtls_ecdh_side = 1;
 /// Defines the source of the imported EC key.
 pub type mbedtls_ecdh_side = ::core::ffi::c_uint;
-///< Implementation not defined.
-pub const mbedtls_ecdh_variant_MBEDTLS_ECDH_VARIANT_NONE: mbedtls_ecdh_variant = 0;
-///< The default Mbed TLS implementation
-pub const mbedtls_ecdh_variant_MBEDTLS_ECDH_VARIANT_MBEDTLS_2_0: mbedtls_ecdh_variant = 1;
-/// Defines the ECDH implementation used.
-///
-/// Later versions of the library may add new variants, therefore users should
-/// not make any assumptions about them.
-pub type mbedtls_ecdh_variant = ::core::ffi::c_uint;
-/// The context used by the default ECDH implementation.
-///
-/// Later versions might change the structure of this context, therefore users
-/// should not make any assumptions about the structure of
-/// mbedtls_ecdh_context_mbed.
+/// \warning         Performing multiple operations concurrently on the same
+///                  ECDSA context is not supported; objects of this type
+///                  should not be shared between multiple threads.
+/// \brief           The ECDH context structure.
 #[repr(C)]
 #[derive(Copy, Clone)]
-pub struct mbedtls_ecdh_context_mbed {
+pub struct mbedtls_ecdh_context {
     ///< The elliptic curve used.
     pub private_grp: mbedtls_ecp_group,
     ///< The private key.
@@ -21557,48 +20828,18 @@ pub struct mbedtls_ecdh_context_mbed {
     pub private_Qp: mbedtls_ecp_point,
     ///< The shared secret.
     pub private_z: mbedtls_mpi,
-}
-impl Default for mbedtls_ecdh_context_mbed {
-    fn default() -> Self {
-        let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-        unsafe {
-            ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-            s.assume_init()
-        }
-    }
-}
-/// \warning         Performing multiple operations concurrently on the same
-///                  ECDSA context is not supported; objects of this type
-///                  should not be shared between multiple threads.
-/// \brief           The ECDH context structure.
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub struct mbedtls_ecdh_context {
-    ///< The format of point export in TLS messages
-    ///as defined in RFC 4492.
-    pub private_point_format: u8,
-    ///< The elliptic curve used.
-    pub private_grp_id: mbedtls_ecp_group_id,
-    ///< The ECDH implementation/structure used.
-    pub private_var: mbedtls_ecdh_variant,
-    ///< Implementation-specific context. The
-    ///context in use is specified by the \c var
-    ///field.
-    pub private_ctx: mbedtls_ecdh_context__bindgen_ty_1,
-}
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub union mbedtls_ecdh_context__bindgen_ty_1 {
-    pub private_mbed_ecdh: mbedtls_ecdh_context_mbed,
-}
-impl Default for mbedtls_ecdh_context__bindgen_ty_1 {
-    fn default() -> Self {
-        let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
-        unsafe {
-            ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
-            s.assume_init()
-        }
-    }
+    ///< The format of point export in TLS messages.
+    pub private_point_format: ::core::ffi::c_int,
+    ///< The blinding value.
+    pub private_Vi: mbedtls_ecp_point,
+    ///< The unblinding value.
+    pub private_Vf: mbedtls_ecp_point,
+    ///< The previous \p d.
+    pub private__d: mbedtls_mpi,
+    ///< The flag for restartable mode.
+    pub private_restart_enabled: ::core::ffi::c_int,
+    ///< The restart context for EC computations.
+    pub private_rs: mbedtls_ecp_restart_ctx,
 }
 impl Default for mbedtls_ecdh_context {
     fn default() -> Self {
@@ -21913,17 +21154,24 @@ unsafe extern "C" {
         p_rng: *mut ::core::ffi::c_void,
     ) -> ::core::ffi::c_int;
 }
+unsafe extern "C" {
+    /// \brief           This function enables restartable EC computations for this
+    ///                  context.  (Default: disabled.)
+    ///
+    /// \see             \c mbedtls_ecp_set_max_ops()
+    ///
+    /// \note            It is not possible to safely disable restartable
+    ///                  computations once enabled, except by free-ing the context,
+    ///                  which cancels possible in-progress operations.
+    ///
+    /// \param ctx       The ECDH context to use. This must be initialized.
+    pub fn mbedtls_ecdh_enable_restart(ctx: *mut mbedtls_ecdh_context);
+}
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub union mbedtls_ssl_premaster_secret {
     pub dummy: ::core::ffi::c_uchar,
-    pub _pms_rsa: [::core::ffi::c_uchar; 48usize],
-    pub _pms_dhm: [::core::ffi::c_uchar; 1024usize],
-    pub _pms_ecdh: [::core::ffi::c_uchar; 66usize],
-    pub _pms_psk: [::core::ffi::c_uchar; 100usize],
-    pub _pms_dhe_psk: [::core::ffi::c_uchar; 1076usize],
-    pub _pms_rsa_psk: [::core::ffi::c_uchar; 100usize],
-    pub _pms_ecdhe_psk: [::core::ffi::c_uchar; 118usize],
+    pub _pms_ecdh: [::core::ffi::c_uchar; 48usize],
 }
 impl Default for mbedtls_ssl_premaster_secret {
     fn default() -> Self {
@@ -22097,11 +21345,6 @@ pub struct mbedtls_ssl_sig_hash_set_t {
 pub struct mbedtls_ssl_key_cert {
     _unused: [u8; 0],
 }
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub struct mbedtls_ssl_flight_item {
-    _unused: [u8; 0],
-}
 /// \brief          Callback type: server-side session cache getter
 ///
 ///                 The session cache is logically a key value store, with
@@ -22193,6 +21436,8 @@ pub struct mbedtls_ssl_session {
     /// TLS version negotiated in the session. Used if and when renegotiating
     ///  or resuming a session instead of the configured minor TLS version.
     pub private_tls_version: mbedtls_ssl_protocol_version,
+    ///< start time of current session
+    pub private_start: mbedtls_time_t,
     ///< chosen ciphersuite
     pub private_ciphersuite: ::core::ffi::c_int,
     ///< session id length
@@ -22211,6 +21456,22 @@ pub struct mbedtls_ssl_session {
     pub private_ticket_len: usize,
     ///< ticket lifetime hint
     pub private_ticket_lifetime: u32,
+    /// When a ticket is created by a TLS server as part of an established TLS
+    ///  session, the ticket creation time may need to be saved for the ticket
+    ///  module to be able to check the ticket age when the ticket is used.
+    ///  That's the purpose of this field.
+    ///  Before creating a new ticket, an Mbed TLS server set this field with
+    ///  its current time in milliseconds. This time may then be saved in the
+    ///  session ticket data by the session ticket writing function and
+    ///  recovered by the ticket parsing function later when the ticket is used.
+    ///  The ticket module may then use this time to compute the ticket age and
+    ///  determine if it has expired or not.
+    ///  The Mbed TLS implementations of the session ticket writing and parsing
+    ///  functions save and retrieve the ticket creation time as part of the
+    ///  session ticket data. The session ticket parsing function relies on
+    ///  the mbedtls_ssl_session_get_ticket_creation_time() API to get the
+    ///  ticket creation time from the session ticket data.
+    pub private_ticket_creation_time: mbedtls_ms_time_t,
     ///< Randomly generated value used to obscure the age of the ticket
     pub private_ticket_age_add: u32,
     ///< Ticket flags
@@ -22220,6 +21481,8 @@ pub struct mbedtls_ssl_session {
     pub private_resumption_key: [::core::ffi::c_uchar; 48usize],
     ///< host name binded with tickets
     pub private_hostname: *mut ::core::ffi::c_char,
+    /// Time in milliseconds when the last ticket was received.
+    pub private_ticket_reception_time: mbedtls_ms_time_t,
     ///< flag for EtM activation
     pub private_encrypt_then_mac: ::core::ffi::c_int,
     pub private_app_secrets: mbedtls_ssl_tls13_application_secrets,
@@ -22328,8 +21591,6 @@ pub struct mbedtls_ssl_config {
     pub private_encrypt_then_mac: u8,
     ///< negotiate extended master secret?
     pub private_extended_ms: u8,
-    ///< detect and prevent replay?
-    pub private_anti_replay: u8,
     ///< disable renegotiation?
     pub private_disable_renegotiation: u8,
     ///< use session tickets?
@@ -22343,10 +21604,6 @@ pub struct mbedtls_ssl_config {
     ///the client's preferences rather
     ///than ours?
     pub private_respect_cli_pref: u8,
-    ///< Should DTLS record with
-    ///   unexpected CID
-    ///   lead to failure?
-    pub private_ignore_unexpected_cid: u8,
     /// Allowed ciphersuites for (D)TLS 1.2 (0-terminated)
     pub private_ciphersuite_list: *const ::core::ffi::c_int,
     /// Allowed TLS 1.3 key exchange modes.
@@ -22412,28 +21669,6 @@ pub struct mbedtls_ssl_config {
     >,
     ///< context for PSK callback
     pub private_p_psk: *mut ::core::ffi::c_void,
-    /// Callback to create & write a cookie for ClientHello verification
-    pub private_f_cookie_write: ::core::option::Option<
-        unsafe extern "C" fn(
-            arg1: *mut ::core::ffi::c_void,
-            arg2: *mut *mut ::core::ffi::c_uchar,
-            arg3: *mut ::core::ffi::c_uchar,
-            arg4: *const ::core::ffi::c_uchar,
-            arg5: usize,
-        ) -> ::core::ffi::c_int,
-    >,
-    /// Callback to verify validity of a ClientHello cookie
-    pub private_f_cookie_check: ::core::option::Option<
-        unsafe extern "C" fn(
-            arg1: *mut ::core::ffi::c_void,
-            arg2: *const ::core::ffi::c_uchar,
-            arg3: usize,
-            arg4: *const ::core::ffi::c_uchar,
-            arg5: usize,
-        ) -> ::core::ffi::c_int,
-    >,
-    ///< context for the cookie callbacks
-    pub private_p_cookie: *mut ::core::ffi::c_void,
     /// Callback to create & write a session ticket
     pub private_f_ticket_write: ::core::option::Option<
         unsafe extern "C" fn(
@@ -22456,8 +21691,6 @@ pub struct mbedtls_ssl_config {
     >,
     ///< context for the ticket callbacks
     pub private_p_ticket: *mut ::core::ffi::c_void,
-    ///< The length of CIDs for incoming DTLS records.
-    pub private_cid_len: usize,
     ///< verification profile
     pub private_cert_profile: *const mbedtls_x509_crt_profile,
     ///< own certificate/key pair(s)
@@ -22470,10 +21703,6 @@ pub struct mbedtls_ssl_config {
     pub private_sig_algs: *const u16,
     ///< allowed IANA NamedGroups
     pub private_group_list: *const u16,
-    ///< prime modulus for DHM
-    pub private_dhm_P: mbedtls_mpi,
-    ///< generator for DHM
-    pub private_dhm_G: mbedtls_mpi,
     ///< The raw pre-shared key. This field should
     ///   only be set via mbedtls_ssl_conf_psk().
     ///   If either no PSK or an opaque PSK
@@ -22502,12 +21731,6 @@ pub struct mbedtls_ssl_config {
     pub private_alpn_list: *mut *const ::core::ffi::c_char,
     ///< timeout for mbedtls_ssl_read (ms)
     pub private_read_timeout: u32,
-    ///< initial value of the handshake
-    ///retransmission timeout (ms)
-    pub private_hs_timeout_min: u32,
-    ///< maximum value of the handshake
-    ///retransmission timeout (ms)
-    pub private_hs_timeout_max: u32,
     ///< grace period for renegotiation
     pub private_renego_max_records: ::core::ffi::c_int,
     ///< value of the record counters
@@ -22515,8 +21738,6 @@ pub struct mbedtls_ssl_config {
     pub private_renego_period: [::core::ffi::c_uchar; 8usize],
     ///< limit of records with a bad MAC
     pub private_badmac_limit: ::core::ffi::c_uint,
-    ///< min. bit length of the DHM prime
-    pub private_dhm_min_bitlen: ::core::ffi::c_uint,
     /// User data pointer or handle.
     ///
     /// The library sets this to \p 0 when creating a context and does not
@@ -22635,9 +21856,6 @@ pub struct mbedtls_ssl_context {
     pub private_in_ctr: *mut ::core::ffi::c_uchar,
     ///< start of record header
     pub private_in_hdr: *mut ::core::ffi::c_uchar,
-    ///< The start of the CID;
-    ///   (the end is marked by in_len).
-    pub private_in_cid: *mut ::core::ffi::c_uchar,
     ///< two-bytes message length field
     pub private_in_len: *mut ::core::ffi::c_uchar,
     ///< ivlen-byte IV
@@ -22652,15 +21870,6 @@ pub struct mbedtls_ssl_context {
     pub private_in_msglen: usize,
     ///< amount of data read so far
     pub private_in_left: usize,
-    ///< DTLS epoch for incoming records
-    pub private_in_epoch: u16,
-    ///< offset of the next record in datagram
-    ///(equal to in_left if none)
-    pub private_next_record_offset: usize,
-    ///< last validated record seq_num
-    pub private_in_window_top: u64,
-    ///< bitmask for replay detection
-    pub private_in_window: u64,
     ///< current handshake message length,
     ///including the handshake header
     pub private_in_hslen: usize,
@@ -22681,18 +21890,12 @@ pub struct mbedtls_ssl_context {
     ///to the user once the fatal alert
     ///has been sent.
     pub private_alert_reason: ::core::ffi::c_int,
-    ///< Disable packing multiple records
-    ///   within a single datagram.
-    pub private_disable_datagram_packing: u8,
     ///< output buffer
     pub private_out_buf: *mut ::core::ffi::c_uchar,
     ///< 64-bit outgoing message counter
     pub private_out_ctr: *mut ::core::ffi::c_uchar,
     ///< start of record header
     pub private_out_hdr: *mut ::core::ffi::c_uchar,
-    ///< The start of the CID;
-    ///   (the end is marked by in_len).
-    pub private_out_cid: *mut ::core::ffi::c_uchar,
     ///< two-bytes message length field
     pub private_out_len: *mut ::core::ffi::c_uchar,
     ///< ivlen-byte IV
@@ -22707,8 +21910,6 @@ pub struct mbedtls_ssl_context {
     pub private_out_left: usize,
     ///<  Outgoing record sequence  number.
     pub private_cur_out_ctr: [::core::ffi::c_uchar; 8usize],
-    ///< path mtu, used to fragment outgoing messages
-    pub private_mtu: u16,
     /// Expected peer CN for verification.
     ///
     /// Also used on clients for SNI,
@@ -22739,10 +21940,6 @@ pub struct mbedtls_ssl_context {
     pub private_hostname: *mut ::core::ffi::c_char,
     ///<  negotiated protocol
     pub private_alpn_chosen: *const ::core::ffi::c_char,
-    ///<  transport-level ID of the client
-    pub private_cli_id: *mut ::core::ffi::c_uchar,
-    ///<  length of cli_id
-    pub private_cli_id_len: usize,
     ///<  does peer support legacy or
     ///secure renegotiation
     pub private_secure_renegotiation: ::core::ffi::c_int,
@@ -22752,18 +21949,6 @@ pub struct mbedtls_ssl_context {
     pub private_own_verify_data: [::core::ffi::c_char; 12usize],
     ///<  previous handshake verify data
     pub private_peer_verify_data: [::core::ffi::c_char; 12usize],
-    /// The next incoming CID, chosen by the user and applying to
-    ///  all subsequent handshakes. This may be different from the
-    ///  CID currently used in case the user has re-configured the CID
-    ///  after an initial handshake.
-    pub private_own_cid: [::core::ffi::c_uchar; 32usize],
-    ///< The length of \c own_cid.
-    pub private_own_cid_len: u8,
-    ///< This indicates whether the CID extension should
-    ///   be negotiated in the next handshake or not.
-    ///   Possible values are #MBEDTLS_SSL_CID_ENABLED
-    ///   and #MBEDTLS_SSL_CID_DISABLED.
-    pub private_negotiate_cid: u8,
     /// Callback to export key block and master secret
     pub private_f_export_keys: mbedtls_ssl_export_keys_t,
     ///< context for key export callback
@@ -23018,214 +22203,6 @@ unsafe extern "C" {
         f_recv: mbedtls_ssl_recv_t,
         f_recv_timeout: mbedtls_ssl_recv_timeout_t,
     );
-}
-unsafe extern "C" {
-    /// \brief             Configure the use of the Connection ID (CID)
-    ///                    extension in the next handshake.
-    ///
-    ///                    Reference: RFC 9146 (or draft-ietf-tls-dtls-connection-id-05
-    ///                    https://tools.ietf.org/html/draft-ietf-tls-dtls-connection-id-05
-    ///                    for legacy version)
-    ///
-    ///                    The DTLS CID extension allows the reliable association of
-    ///                    DTLS records to DTLS connections across changes in the
-    ///                    underlying transport (changed IP and Port metadata) by
-    ///                    adding explicit connection identifiers (CIDs) to the
-    ///                    headers of encrypted DTLS records. The desired CIDs are
-    ///                    configured by the application layer and are exchanged in
-    ///                    new `ClientHello` / `ServerHello` extensions during the
-    ///                    handshake, where each side indicates the CID it wants the
-    ///                    peer to use when writing encrypted messages. The CIDs are
-    ///                    put to use once records get encrypted: the stack discards
-    ///                    any incoming records that don't include the configured CID
-    ///                    in their header, and adds the peer's requested CID to the
-    ///                    headers of outgoing messages.
-    ///
-    ///                    This API enables or disables the use of the CID extension
-    ///                    in the next handshake and sets the value of the CID to
-    ///                    be used for incoming messages.
-    ///
-    /// \param ssl         The SSL context to configure. This must be initialized.
-    /// \param enable      This value determines whether the CID extension should
-    ///                    be used or not. Possible values are:
-    ///                    - MBEDTLS_SSL_CID_ENABLED to enable the use of the CID.
-    ///                    - MBEDTLS_SSL_CID_DISABLED (default) to disable the use
-    ///                      of the CID.
-    /// \param own_cid     The address of the readable buffer holding the CID we want
-    ///                    the peer to use when sending encrypted messages to us.
-    ///                    This may be \c NULL if \p own_cid_len is \c 0.
-    ///                    This parameter is unused if \p enable is set to
-    ///                    MBEDTLS_SSL_CID_DISABLED.
-    /// \param own_cid_len The length of \p own_cid.
-    ///                    This parameter is unused if \p enable is set to
-    ///                    MBEDTLS_SSL_CID_DISABLED.
-    ///
-    /// \note              The value of \p own_cid_len must match the value of the
-    ///                    \c len parameter passed to mbedtls_ssl_conf_cid()
-    ///                    when configuring the ::mbedtls_ssl_config that \p ssl
-    ///                    is bound to.
-    ///
-    /// \note              This CID configuration applies to subsequent handshakes
-    ///                    performed on the SSL context \p ssl, but does not trigger
-    ///                    one. You still have to call `mbedtls_ssl_handshake()`
-    ///                    (for the initial handshake) or `mbedtls_ssl_renegotiate()`
-    ///                    (for a renegotiation handshake) explicitly after a
-    ///                    successful call to this function to run the handshake.
-    ///
-    /// \note              This call cannot guarantee that the use of the CID
-    ///                    will be successfully negotiated in the next handshake,
-    ///                    because the peer might not support it. Specifically:
-    ///                    - On the Client, enabling the use of the CID through
-    ///                      this call implies that the `ClientHello` in the next
-    ///                      handshake will include the CID extension, thereby
-    ///                      offering the use of the CID to the server. Only if
-    ///                      the `ServerHello` contains the CID extension, too,
-    ///                      the CID extension will actually be put to use.
-    ///                    - On the Server, enabling the use of the CID through
-    ///                      this call implies that the server will look for
-    ///                      the CID extension in a `ClientHello` from the client,
-    ///                      and, if present, reply with a CID extension in its
-    ///                      `ServerHello`.
-    ///
-    /// \note              To check whether the use of the CID was negotiated
-    ///                    after the subsequent handshake has completed, please
-    ///                    use the API mbedtls_ssl_get_peer_cid().
-    ///
-    /// \warning           If the use of the CID extension is enabled in this call
-    ///                    and the subsequent handshake negotiates its use, Mbed TLS
-    ///                    will silently drop every packet whose CID does not match
-    ///                    the CID configured in \p own_cid. It is the responsibility
-    ///                    of the user to adapt the underlying transport to take care
-    ///                    of CID-based demultiplexing before handing datagrams to
-    ///                    Mbed TLS.
-    ///
-    /// \return            \c 0 on success. In this case, the CID configuration
-    ///                    applies to the next handshake.
-    /// \return            A negative error code on failure.
-    pub fn mbedtls_ssl_set_cid(
-        ssl: *mut mbedtls_ssl_context,
-        enable: ::core::ffi::c_int,
-        own_cid: *const ::core::ffi::c_uchar,
-        own_cid_len: usize,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief              Get information about our request for usage of the CID
-    ///                     extension in the current connection.
-    ///
-    /// \param ssl          The SSL context to query.
-    /// \param enabled      The address at which to store whether the CID extension
-    ///                     is requested to be used or not. If the CID is
-    ///                     requested, `*enabled` is set to
-    ///                     MBEDTLS_SSL_CID_ENABLED; otherwise, it is set to
-    ///                     MBEDTLS_SSL_CID_DISABLED.
-    /// \param own_cid      The address of the buffer in which to store our own
-    ///                     CID (if the CID extension is requested). This may be
-    ///                     \c NULL in case the value of our CID isn't needed. If
-    ///                     it is not \c NULL, \p own_cid_len must not be \c NULL.
-    /// \param own_cid_len  The address at which to store the size of our own CID
-    ///                     (if the CID extension is requested). This is also the
-    ///                     number of Bytes in \p own_cid that have been written.
-    ///                     This may be \c NULL in case the length of our own CID
-    ///                     isn't needed. If it is \c NULL, \p own_cid must be
-    ///                     \c NULL, too.
-    ///
-    ///\note                If we are requesting an empty CID this function sets
-    ///                     `*enabled` to #MBEDTLS_SSL_CID_DISABLED (the rationale
-    ///                     for this is that the resulting outcome is the
-    ///                     same as if the CID extensions wasn't requested).
-    ///
-    /// \return            \c 0 on success.
-    /// \return            A negative error code on failure.
-    pub fn mbedtls_ssl_get_own_cid(
-        ssl: *mut mbedtls_ssl_context,
-        enabled: *mut ::core::ffi::c_int,
-        own_cid: *mut ::core::ffi::c_uchar,
-        own_cid_len: *mut usize,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief              Get information about the use of the CID extension
-    ///                     in the current connection.
-    ///
-    /// \param ssl          The SSL context to query.
-    /// \param enabled      The address at which to store whether the CID extension
-    ///                     is currently in use or not. If the CID is in use,
-    ///                     `*enabled` is set to MBEDTLS_SSL_CID_ENABLED;
-    ///                     otherwise, it is set to MBEDTLS_SSL_CID_DISABLED.
-    /// \param peer_cid     The address of the buffer in which to store the CID
-    ///                     chosen by the peer (if the CID extension is used).
-    ///                     This may be \c NULL in case the value of peer CID
-    ///                     isn't needed. If it is not \c NULL, \p peer_cid_len
-    ///                     must not be \c NULL.
-    /// \param peer_cid_len The address at which to store the size of the CID
-    ///                     chosen by the peer (if the CID extension is used).
-    ///                     This is also the number of Bytes in \p peer_cid that
-    ///                     have been written.
-    ///                     This may be \c NULL in case the length of the peer CID
-    ///                     isn't needed. If it is \c NULL, \p peer_cid must be
-    ///                     \c NULL, too.
-    ///
-    /// \note               This applies to the state of the CID negotiated in
-    ///                     the last complete handshake. If a handshake is in
-    ///                     progress, this function will attempt to complete
-    ///                     the handshake first.
-    ///
-    /// \note               If CID extensions have been exchanged but both client
-    ///                     and server chose to use an empty CID, this function
-    ///                     sets `*enabled` to #MBEDTLS_SSL_CID_DISABLED
-    ///                     (the rationale for this is that the resulting
-    ///                     communication is the same as if the CID extensions
-    ///                     hadn't been used).
-    ///
-    /// \return            \c 0 on success.
-    /// \return            A negative error code on failure.
-    pub fn mbedtls_ssl_get_peer_cid(
-        ssl: *mut mbedtls_ssl_context,
-        enabled: *mut ::core::ffi::c_int,
-        peer_cid: *mut ::core::ffi::c_uchar,
-        peer_cid_len: *mut usize,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief          Set the Maximum Transport Unit (MTU).
-    ///                 Special value: 0 means unset (no limit).
-    ///                 This represents the maximum size of a datagram payload
-    ///                 handled by the transport layer (usually UDP) as determined
-    ///                 by the network link and stack. In practice, this controls
-    ///                 the maximum size datagram the DTLS layer will pass to the
-    ///                 \c f_send() callback set using \c mbedtls_ssl_set_bio().
-    ///
-    /// \note           The limit on datagram size is converted to a limit on
-    ///                 record payload by subtracting the current overhead of
-    ///                 encapsulation and encryption/authentication if any.
-    ///
-    /// \note           This can be called at any point during the connection, for
-    ///                 example when a Path Maximum Transfer Unit (PMTU)
-    ///                 estimate becomes available from other sources,
-    ///                 such as lower (or higher) protocol layers.
-    ///
-    /// \note           This setting only controls the size of the packets we send,
-    ///                 and does not restrict the size of the datagrams we're
-    ///                 willing to receive. Client-side, you can request the
-    ///                 server to use smaller records with \c
-    ///                 mbedtls_ssl_conf_max_frag_len().
-    ///
-    /// \note           If both a MTU and a maximum fragment length have been
-    ///                 configured (or negotiated with the peer), the resulting
-    ///                 lower limit on record payload (see first note) is used.
-    ///
-    /// \note           This can only be used to decrease the maximum size
-    ///                 of datagrams (hence records, see first note) sent. It
-    ///                 cannot be used to increase the maximum size of records over
-    ///                 the limit set by #MBEDTLS_SSL_OUT_CONTENT_LEN.
-    ///
-    /// \note           Values lower than the current record layer expansion will
-    ///                 result in an error when trying to send data.
-    ///
-    /// \param ssl      SSL context
-    /// \param mtu      Value of the path MTU in bytes
-    pub fn mbedtls_ssl_set_mtu(ssl: *mut mbedtls_ssl_context, mtu: u16);
 }
 unsafe extern "C" {
     /// \brief          Set a connection-specific verification callback (optional).
@@ -23490,83 +22467,6 @@ pub type mbedtls_ssl_cookie_check_t = ::core::option::Option<
     ) -> ::core::ffi::c_int,
 >;
 unsafe extern "C" {
-    /// \brief           Register callbacks for DTLS cookies
-    ///                  (Server only. DTLS only.)
-    ///
-    ///                  Default: dummy callbacks that fail, in order to force you to
-    ///                  register working callbacks (and initialize their context).
-    ///
-    ///                  To disable HelloVerifyRequest, register NULL callbacks.
-    ///
-    /// \warning         Disabling hello verification allows your server to be used
-    ///                  for amplification in DoS attacks against other hosts.
-    ///                  Only disable if you known this can't happen in your
-    ///                  particular environment.
-    ///
-    /// \note            See comments on \c mbedtls_ssl_handshake() about handling
-    ///                  the MBEDTLS_ERR_SSL_HELLO_VERIFY_REQUIRED that is expected
-    ///                  on the first handshake attempt when this is enabled.
-    ///
-    /// \note            This is also necessary to handle client reconnection from
-    ///                  the same port as described in RFC 6347 section 4.2.8 (only
-    ///                  the variant with cookies is supported currently). See
-    ///                  comments on \c mbedtls_ssl_read() for details.
-    ///
-    /// \param conf              SSL configuration
-    /// \param f_cookie_write    Cookie write callback
-    /// \param f_cookie_check    Cookie check callback
-    /// \param p_cookie          Context for both callbacks
-    pub fn mbedtls_ssl_conf_dtls_cookies(
-        conf: *mut mbedtls_ssl_config,
-        f_cookie_write: mbedtls_ssl_cookie_write_t,
-        f_cookie_check: mbedtls_ssl_cookie_check_t,
-        p_cookie: *mut ::core::ffi::c_void,
-    );
-}
-unsafe extern "C" {
-    /// \brief          Set client's transport-level identification info.
-    ///                 (Server only. DTLS only.)
-    ///
-    ///                 This is usually the IP address (and port), but could be
-    ///                 anything identify the client depending on the underlying
-    ///                 network stack. Used for HelloVerifyRequest with DTLS.
-    ///                 This is *not* used to route the actual packets.
-    ///
-    /// \param ssl      SSL context
-    /// \param info     Transport-level info identifying the client (eg IP + port)
-    /// \param ilen     Length of info in bytes
-    ///
-    /// \note           An internal copy is made, so the info buffer can be reused.
-    ///
-    /// \return         0 on success,
-    ///                 MBEDTLS_ERR_SSL_BAD_INPUT_DATA if used on client,
-    ///                 MBEDTLS_ERR_SSL_ALLOC_FAILED if out of memory.
-    pub fn mbedtls_ssl_set_client_transport_id(
-        ssl: *mut mbedtls_ssl_context,
-        info: *const ::core::ffi::c_uchar,
-        ilen: usize,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief          Enable or disable anti-replay protection for DTLS.
-    ///                 (DTLS only, no effect on TLS.)
-    ///                 Default: enabled.
-    ///
-    /// \param conf     SSL configuration
-    /// \param mode     MBEDTLS_SSL_ANTI_REPLAY_ENABLED or MBEDTLS_SSL_ANTI_REPLAY_DISABLED.
-    ///
-    /// \warning        Disabling this is a security risk unless the application
-    ///                 protocol handles duplicated packets in a safe way. You
-    ///                 should not disable this without careful consideration.
-    ///                 However, if your application already detects duplicated
-    ///                 packets and needs information about them to adjust its
-    ///                 transmission strategy, then you'll want to disable this.
-    pub fn mbedtls_ssl_conf_dtls_anti_replay(
-        conf: *mut mbedtls_ssl_config,
-        mode: ::core::ffi::c_char,
-    );
-}
-unsafe extern "C" {
     /// \brief          Set a limit on the number of records with a bad MAC
     ///                 before terminating the connection.
     ///                 (DTLS only, no effect on TLS.)
@@ -23592,69 +22492,6 @@ unsafe extern "C" {
         conf: *mut mbedtls_ssl_config,
         limit: ::core::ffi::c_uint,
     );
-}
-unsafe extern "C" {
-    /// \brief          Allow or disallow packing of multiple handshake records
-    ///                 within a single datagram.
-    ///
-    /// \param ssl           The SSL context to configure.
-    /// \param allow_packing This determines whether datagram packing may
-    ///                      be used or not. A value of \c 0 means that every
-    ///                      record will be sent in a separate datagram; a
-    ///                      value of \c 1 means that, if space permits,
-    ///                      multiple handshake messages (including CCS) belonging to
-    ///                      a single flight may be packed within a single datagram.
-    ///
-    /// \note           This is enabled by default and should only be disabled
-    ///                 for test purposes, or if datagram packing causes
-    ///                 interoperability issues with peers that don't support it.
-    ///
-    /// \note           Allowing datagram packing reduces the network load since
-    ///                 there's less overhead if multiple messages share the same
-    ///                 datagram. Also, it increases the handshake efficiency
-    ///                 since messages belonging to a single datagram will not
-    ///                 be reordered in transit, and so future message buffering
-    ///                 or flight retransmission (if no buffering is used) as
-    ///                 means to deal with reordering are needed less frequently.
-    ///
-    /// \note           Application records are not affected by this option and
-    ///                 are currently always sent in separate datagrams.
-    pub fn mbedtls_ssl_set_datagram_packing(
-        ssl: *mut mbedtls_ssl_context,
-        allow_packing: ::core::ffi::c_uint,
-    );
-}
-unsafe extern "C" {
-    /// \brief          Set retransmit timeout values for the DTLS handshake.
-    ///                 (DTLS only, no effect on TLS.)
-    ///
-    /// \param conf     SSL configuration
-    /// \param min      Initial timeout value in milliseconds.
-    ///                 Default: 1000 (1 second).
-    /// \param max      Maximum timeout value in milliseconds.
-    ///                 Default: 60000 (60 seconds).
-    ///
-    /// \note           Default values are from RFC 6347 section 4.2.4.1.
-    ///
-    /// \note           The 'min' value should typically be slightly above the
-    ///                 expected round-trip time to your peer, plus whatever time
-    ///                 it takes for the peer to process the message. For example,
-    ///                 if your RTT is about 600ms and you peer needs up to 1s to
-    ///                 do the cryptographic operations in the handshake, then you
-    ///                 should set 'min' slightly above 1600. Lower values of 'min'
-    ///                 might cause spurious resends which waste network resources,
-    ///                 while larger value of 'min' will increase overall latency
-    ///                 on unreliable network links.
-    ///
-    /// \note           The more unreliable your network connection is, the larger
-    ///                 your max / min ratio needs to be in order to achieve
-    ///                 reliable handshakes.
-    ///
-    /// \note           Messages are retransmitted up to log2(ceil(max/min)) times.
-    ///                 For example, if min = 1s and max = 5s, the retransmit plan
-    ///                 goes: send ... 1s -> resend ... 2s -> resend ... 4s ->
-    ///                 resend ... 5s -> give up and return a timeout error.
-    pub fn mbedtls_ssl_conf_handshake_timeout(conf: *mut mbedtls_ssl_config, min: u32, max: u32);
 }
 unsafe extern "C" {
     /// \brief          Set the session cache callbacks (server-side only)
@@ -23915,43 +22752,6 @@ unsafe extern "C" {
     );
 }
 unsafe extern "C" {
-    /// \brief               Specify the length of Connection IDs for incoming
-    ///                      encrypted DTLS records, as well as the behaviour
-    ///                      on unexpected CIDs.
-    ///
-    ///                      By default, the CID length is set to \c 0,
-    ///                      and unexpected CIDs are silently ignored.
-    ///
-    /// \param conf          The SSL configuration to modify.
-    /// \param len           The length in Bytes of the CID fields in encrypted
-    ///                      DTLS records using the CID mechanism. This must
-    ///                      not be larger than #MBEDTLS_SSL_CID_OUT_LEN_MAX.
-    /// \param ignore_other_cids This determines the stack's behaviour when
-    ///                          receiving a record with an unexpected CID.
-    ///                          Possible values are:
-    ///                          - #MBEDTLS_SSL_UNEXPECTED_CID_IGNORE
-    ///                            In this case, the record is silently ignored.
-    ///                          - #MBEDTLS_SSL_UNEXPECTED_CID_FAIL
-    ///                            In this case, the stack fails with the specific
-    ///                            error code #MBEDTLS_ERR_SSL_UNEXPECTED_CID.
-    ///
-    /// \note                The CID specification allows implementations to either
-    ///                      use a common length for all incoming connection IDs or
-    ///                      allow variable-length incoming IDs. Mbed TLS currently
-    ///                      requires a common length for all connections sharing the
-    ///                      same SSL configuration; this allows simpler parsing of
-    ///                      record headers.
-    ///
-    /// \return              \c 0 on success.
-    /// \return              #MBEDTLS_ERR_SSL_BAD_INPUT_DATA if \p len
-    ///                      is too large.
-    pub fn mbedtls_ssl_conf_cid(
-        conf: *mut mbedtls_ssl_config,
-        len: usize,
-        ignore_other_cids: ::core::ffi::c_int,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
     /// \brief          Set the X.509 security profile used for verification
     ///
     /// \note           The restrictions are enforced for all certificates in the
@@ -24130,51 +22930,6 @@ unsafe extern "C" {
             ) -> ::core::ffi::c_int,
         >,
         p_psk: *mut ::core::ffi::c_void,
-    );
-}
-unsafe extern "C" {
-    /// \brief          Set the Diffie-Hellman public P and G values
-    ///                 from big-endian binary presentations.
-    ///                 (Default values: MBEDTLS_DHM_RFC3526_MODP_2048_[PG]_BIN)
-    ///
-    /// \param conf     SSL configuration
-    /// \param dhm_P    Diffie-Hellman-Merkle modulus in big-endian binary form
-    /// \param P_len    Length of DHM modulus
-    /// \param dhm_G    Diffie-Hellman-Merkle generator in big-endian binary form
-    /// \param G_len    Length of DHM generator
-    ///
-    /// \return         0 if successful
-    pub fn mbedtls_ssl_conf_dh_param_bin(
-        conf: *mut mbedtls_ssl_config,
-        dhm_P: *const ::core::ffi::c_uchar,
-        P_len: usize,
-        dhm_G: *const ::core::ffi::c_uchar,
-        G_len: usize,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief          Set the Diffie-Hellman public P and G values,
-    ///                 read from existing context (server-side only)
-    ///
-    /// \param conf     SSL configuration
-    /// \param dhm_ctx  Diffie-Hellman-Merkle context
-    ///
-    /// \return         0 if successful
-    pub fn mbedtls_ssl_conf_dh_param_ctx(
-        conf: *mut mbedtls_ssl_config,
-        dhm_ctx: *mut mbedtls_dhm_context,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief          Set the minimum length for Diffie-Hellman parameters.
-    ///                 (Client-side only.)
-    ///                 (Default: 1024 bits.)
-    ///
-    /// \param conf     SSL configuration
-    /// \param bitlen   Minimum bit length of the DHM prime
-    pub fn mbedtls_ssl_conf_dhm_min_bitlen(
-        conf: *mut mbedtls_ssl_config,
-        bitlen: ::core::ffi::c_uint,
     );
 }
 unsafe extern "C" {
@@ -25498,6 +24253,304 @@ unsafe extern "C" {
     ///                              - 4 Verbose
     pub fn mbedtls_debug_set_threshold(threshold: ::core::ffi::c_int);
 }
+///<  The prime modulus.
+pub const mbedtls_dhm_parameter_MBEDTLS_DHM_PARAM_P: mbedtls_dhm_parameter = 0;
+///<  The generator.
+pub const mbedtls_dhm_parameter_MBEDTLS_DHM_PARAM_G: mbedtls_dhm_parameter = 1;
+///<  Our secret value.
+pub const mbedtls_dhm_parameter_MBEDTLS_DHM_PARAM_X: mbedtls_dhm_parameter = 2;
+///<  Our public key = \c G^X mod \c P.
+pub const mbedtls_dhm_parameter_MBEDTLS_DHM_PARAM_GX: mbedtls_dhm_parameter = 3;
+///<  The public key of the peer = \c G^Y mod \c P.
+pub const mbedtls_dhm_parameter_MBEDTLS_DHM_PARAM_GY: mbedtls_dhm_parameter = 4;
+///<  The shared secret = \c G^(XY) mod \c P.
+pub const mbedtls_dhm_parameter_MBEDTLS_DHM_PARAM_K: mbedtls_dhm_parameter = 5;
+/// Which parameter to access in mbedtls_dhm_get_value().
+pub type mbedtls_dhm_parameter = ::core::ffi::c_uint;
+/// \brief          The DHM context structure.
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct mbedtls_dhm_context {
+    ///<  The prime modulus.
+    pub private_P: mbedtls_mpi,
+    ///<  The generator.
+    pub private_G: mbedtls_mpi,
+    ///<  Our secret value.
+    pub private_X: mbedtls_mpi,
+    ///<  Our public key = \c G^X mod \c P.
+    pub private_GX: mbedtls_mpi,
+    ///<  The public key of the peer = \c G^Y mod \c P.
+    pub private_GY: mbedtls_mpi,
+    ///<  The shared secret = \c G^(XY) mod \c P.
+    pub private_K: mbedtls_mpi,
+    ///<  The cached value = \c R^2 mod \c P.
+    pub private_RP: mbedtls_mpi,
+    ///<  The blinding value.
+    pub private_Vi: mbedtls_mpi,
+    ///<  The unblinding value.
+    pub private_Vf: mbedtls_mpi,
+    ///<  The previous \c X.
+    pub private_pX: mbedtls_mpi,
+}
+impl Default for mbedtls_dhm_context {
+    fn default() -> Self {
+        let mut s = ::core::mem::MaybeUninit::<Self>::uninit();
+        unsafe {
+            ::core::ptr::write_bytes(s.as_mut_ptr(), 0, 1);
+            s.assume_init()
+        }
+    }
+}
+unsafe extern "C" {
+    /// \brief          This function initializes the DHM context.
+    ///
+    /// \param ctx      The DHM context to initialize.
+    pub fn mbedtls_dhm_init(ctx: *mut mbedtls_dhm_context);
+}
+unsafe extern "C" {
+    /// \brief          This function parses the DHM parameters in a
+    ///                 TLS ServerKeyExchange handshake message
+    ///                 (DHM modulus, generator, and public key).
+    ///
+    /// \note           In a TLS handshake, this is the how the client
+    ///                 sets up its DHM context from the server's public
+    ///                 DHM key material.
+    ///
+    /// \param ctx      The DHM context to use. This must be initialized.
+    /// \param p        On input, *p must be the start of the input buffer.
+    ///                 On output, *p is updated to point to the end of the data
+    ///                 that has been read. On success, this is the first byte
+    ///                 past the end of the ServerKeyExchange parameters.
+    ///                 On error, this is the point at which an error has been
+    ///                 detected, which is usually not useful except to debug
+    ///                 failures.
+    /// \param end      The end of the input buffer.
+    ///
+    /// \return         \c 0 on success.
+    /// \return         An \c MBEDTLS_ERR_DHM_XXX error code on failure.
+    pub fn mbedtls_dhm_read_params(
+        ctx: *mut mbedtls_dhm_context,
+        p: *mut *mut ::core::ffi::c_uchar,
+        end: *const ::core::ffi::c_uchar,
+    ) -> ::core::ffi::c_int;
+}
+unsafe extern "C" {
+    /// \brief          This function generates a DHM key pair and exports its
+    ///                 public part together with the DHM parameters in the format
+    ///                 used in a TLS ServerKeyExchange handshake message.
+    ///
+    /// \note           This function assumes that the DHM parameters \c ctx->P
+    ///                 and \c ctx->G have already been properly set. For that, use
+    ///                 mbedtls_dhm_set_group() below in conjunction with
+    ///                 mbedtls_mpi_read_binary() and mbedtls_mpi_read_string().
+    ///
+    /// \note           In a TLS handshake, this is the how the server generates
+    ///                 and exports its DHM key material.
+    ///
+    /// \param ctx      The DHM context to use. This must be initialized
+    ///                 and have the DHM parameters set. It may or may not
+    ///                 already have imported the peer's public key.
+    /// \param x_size   The private key size in Bytes.
+    /// \param olen     The address at which to store the number of Bytes
+    ///                 written on success. This must not be \c NULL.
+    /// \param output   The destination buffer. This must be a writable buffer of
+    ///                 sufficient size to hold the reduced binary presentation of
+    ///                 the modulus, the generator and the public key, each wrapped
+    ///                 with a 2-byte length field. It is the responsibility of the
+    ///                 caller to ensure that enough space is available. Refer to
+    ///                 mbedtls_mpi_size() to computing the byte-size of an MPI.
+    /// \param f_rng    The RNG function. Must not be \c NULL.
+    /// \param p_rng    The RNG context to be passed to \p f_rng. This may be
+    ///                 \c NULL if \p f_rng doesn't need a context parameter.
+    ///
+    /// \return         \c 0 on success.
+    /// \return         An \c MBEDTLS_ERR_DHM_XXX error code on failure.
+    pub fn mbedtls_dhm_make_params(
+        ctx: *mut mbedtls_dhm_context,
+        x_size: ::core::ffi::c_int,
+        output: *mut ::core::ffi::c_uchar,
+        olen: *mut usize,
+        f_rng: mbedtls_f_rng_t,
+        p_rng: *mut ::core::ffi::c_void,
+    ) -> ::core::ffi::c_int;
+}
+unsafe extern "C" {
+    /// \brief          This function sets the prime modulus and generator.
+    ///
+    /// \note           This function can be used to set \c ctx->P, \c ctx->G
+    ///                 in preparation for mbedtls_dhm_make_params().
+    ///
+    /// \param ctx      The DHM context to configure. This must be initialized.
+    /// \param P        The MPI holding the DHM prime modulus. This must be
+    ///                 an initialized MPI.
+    /// \param G        The MPI holding the DHM generator. This must be an
+    ///                 initialized MPI.
+    ///
+    /// \return         \c 0 if successful.
+    /// \return         An \c MBEDTLS_ERR_DHM_XXX error code on failure.
+    pub fn mbedtls_dhm_set_group(
+        ctx: *mut mbedtls_dhm_context,
+        P: *const mbedtls_mpi,
+        G: *const mbedtls_mpi,
+    ) -> ::core::ffi::c_int;
+}
+unsafe extern "C" {
+    /// \brief          This function imports the raw public value of the peer.
+    ///
+    /// \note           In a TLS handshake, this is the how the server imports
+    ///                 the Client's public DHM key.
+    ///
+    /// \param ctx      The DHM context to use. This must be initialized and have
+    ///                 its DHM parameters set, e.g. via mbedtls_dhm_set_group().
+    ///                 It may or may not already have generated its own private key.
+    /// \param input    The input buffer containing the \c G^Y value of the peer.
+    ///                 This must be a readable buffer of size \p ilen Bytes.
+    /// \param ilen     The size of the input buffer \p input in Bytes.
+    ///
+    /// \return         \c 0 on success.
+    /// \return         An \c MBEDTLS_ERR_DHM_XXX error code on failure.
+    pub fn mbedtls_dhm_read_public(
+        ctx: *mut mbedtls_dhm_context,
+        input: *const ::core::ffi::c_uchar,
+        ilen: usize,
+    ) -> ::core::ffi::c_int;
+}
+unsafe extern "C" {
+    /// \brief          This function creates a DHM key pair and exports
+    ///                 the raw public key in big-endian format.
+    ///
+    /// \note           The destination buffer is always fully written
+    ///                 so as to contain a big-endian representation of G^X mod P.
+    ///                 If it is larger than \c ctx->len, it is padded accordingly
+    ///                 with zero-bytes at the beginning.
+    ///
+    /// \param ctx      The DHM context to use. This must be initialized and
+    ///                 have the DHM parameters set. It may or may not already
+    ///                 have imported the peer's public key.
+    /// \param x_size   The private key size in Bytes.
+    /// \param output   The destination buffer. This must be a writable buffer of
+    ///                 size \p olen Bytes.
+    /// \param olen     The length of the destination buffer. This must be at least
+    ///                 equal to `ctx->len` (the size of \c P).
+    /// \param f_rng    The RNG function. This must not be \c NULL.
+    /// \param p_rng    The RNG context to be passed to \p f_rng. This may be \c NULL
+    ///                 if \p f_rng doesn't need a context argument.
+    ///
+    /// \return         \c 0 on success.
+    /// \return         An \c MBEDTLS_ERR_DHM_XXX error code on failure.
+    pub fn mbedtls_dhm_make_public(
+        ctx: *mut mbedtls_dhm_context,
+        x_size: ::core::ffi::c_int,
+        output: *mut ::core::ffi::c_uchar,
+        olen: usize,
+        f_rng: mbedtls_f_rng_t,
+        p_rng: *mut ::core::ffi::c_void,
+    ) -> ::core::ffi::c_int;
+}
+unsafe extern "C" {
+    /// \brief          This function derives and exports the shared secret
+    ///                 \c (G^Y)^X mod \c P.
+    ///
+    /// \note           If \p f_rng is not \c NULL, it is used to blind the input as
+    ///                 a countermeasure against timing attacks. Blinding is used
+    ///                 only if our private key \c X is re-used, and not used
+    ///                 otherwise. We recommend always passing a non-NULL
+    ///                 \p f_rng argument.
+    ///
+    /// \param ctx           The DHM context to use. This must be initialized
+    ///                      and have its own private key generated and the peer's
+    ///                      public key imported.
+    /// \param output        The buffer to write the generated shared key to. This
+    ///                      must be a writable buffer of size \p output_size Bytes.
+    /// \param output_size   The size of the destination buffer. This must be at
+    ///                      least the size of \c ctx->len (the size of \c P).
+    /// \param olen          On exit, holds the actual number of Bytes written.
+    /// \param f_rng         The RNG function. Must not be \c NULL. Used for
+    ///                      blinding.
+    /// \param p_rng         The RNG context to be passed to \p f_rng. This may be
+    ///                      \c NULL if \p f_rng doesn't need a context parameter.
+    ///
+    /// \return              \c 0 on success.
+    /// \return              An \c MBEDTLS_ERR_DHM_XXX error code on failure.
+    pub fn mbedtls_dhm_calc_secret(
+        ctx: *mut mbedtls_dhm_context,
+        output: *mut ::core::ffi::c_uchar,
+        output_size: usize,
+        olen: *mut usize,
+        f_rng: mbedtls_f_rng_t,
+        p_rng: *mut ::core::ffi::c_void,
+    ) -> ::core::ffi::c_int;
+}
+unsafe extern "C" {
+    /// \brief          This function returns the size of the prime modulus in bits.
+    ///
+    /// \param ctx      The DHM context to query.
+    ///
+    /// \return         The size of the prime modulus in bits,
+    ///                 i.e. the number n such that 2^(n-1) <= P < 2^n.
+    pub fn mbedtls_dhm_get_bitlen(ctx: *const mbedtls_dhm_context) -> usize;
+}
+unsafe extern "C" {
+    /// \brief          This function returns the size of the prime modulus in bytes.
+    ///
+    /// \param ctx      The DHM context to query.
+    ///
+    /// \return         The size of the prime modulus in bytes,
+    ///                 i.e. the number n such that 2^(8*(n-1)) <= P < 2^(8*n).
+    pub fn mbedtls_dhm_get_len(ctx: *const mbedtls_dhm_context) -> usize;
+}
+unsafe extern "C" {
+    /// \brief          This function copies a parameter of a DHM key.
+    ///
+    /// \param ctx      The DHM context to query.
+    /// \param param    The parameter to copy.
+    /// \param dest     The MPI object to copy the value into. It must be
+    ///                 initialized.
+    ///
+    /// \return         \c 0 on success.
+    /// \return         #MBEDTLS_ERR_DHM_BAD_INPUT_DATA if \p param is invalid.
+    /// \return         An \c MBEDTLS_ERR_MPI_XXX error code if the copy fails.
+    pub fn mbedtls_dhm_get_value(
+        ctx: *const mbedtls_dhm_context,
+        param: mbedtls_dhm_parameter,
+        dest: *mut mbedtls_mpi,
+    ) -> ::core::ffi::c_int;
+}
+unsafe extern "C" {
+    /// \brief          This function frees and clears the components
+    ///                 of a DHM context.
+    ///
+    /// \param ctx      The DHM context to free and clear. This may be \c NULL,
+    ///                 in which case this function is a no-op. If it is not \c NULL,
+    ///                 it must point to an initialized DHM context.
+    pub fn mbedtls_dhm_free(ctx: *mut mbedtls_dhm_context);
+}
+unsafe extern "C" {
+    /// \brief             This function parses DHM parameters in PEM or DER format.
+    ///
+    /// \param dhm         The DHM context to import the DHM parameters into.
+    ///                    This must be initialized.
+    /// \param dhmin       The input buffer. This must be a readable buffer of
+    ///                    length \p dhminlen Bytes.
+    /// \param dhminlen    The size of the input buffer \p dhmin, including the
+    ///                    terminating \c NULL Byte for PEM data.
+    ///
+    /// \return            \c 0 on success.
+    /// \return            An \c MBEDTLS_ERR_DHM_XXX or \c MBEDTLS_ERR_PEM_XXX error
+    ///                    code on failure.
+    pub fn mbedtls_dhm_parse_dhm(
+        dhm: *mut mbedtls_dhm_context,
+        dhmin: *const ::core::ffi::c_uchar,
+        dhminlen: usize,
+    ) -> ::core::ffi::c_int;
+}
+unsafe extern "C" {
+    /// \brief          The DMH checkup routine.
+    ///
+    /// \return         \c 0 on success.
+    /// \return         \c 1 on failure.
+    pub fn mbedtls_dhm_self_test(verbose: ::core::ffi::c_int) -> ::core::ffi::c_int;
+}
 unsafe extern "C" {
     ///  \brief  This is the HMAC-based Extract-and-Expand Key Derivation Function
     ///          (HKDF).
@@ -26518,21 +25571,6 @@ unsafe extern "C" {
         cipher_alg: *mut mbedtls_cipher_type_t,
     ) -> ::core::ffi::c_int;
 }
-unsafe extern "C" {
-    /// \brief          Translate PKCS#12 PBE algorithm OID into md_type and
-    ///                 cipher_type
-    ///
-    /// \param oid           OID to use
-    /// \param md_alg        place to store message digest algorithm
-    /// \param cipher_alg    place to store cipher algorithm
-    ///
-    /// \return         0 if successful, or MBEDTLS_ERR_OID_NOT_FOUND
-    pub fn mbedtls_oid_get_pkcs12_pbe_alg(
-        oid: *const mbedtls_asn1_buf,
-        md_alg: *mut mbedtls_md_type_t,
-        cipher_alg: *mut mbedtls_cipher_type_t,
-    ) -> ::core::ffi::c_int;
-}
 /// \brief       PEM context structure
 #[repr(C)]
 #[derive(Copy, Clone)]
@@ -26599,85 +25637,6 @@ unsafe extern "C" {
     ///
     /// \param ctx   context to be freed
     pub fn mbedtls_pem_free(ctx: *mut mbedtls_pem_context);
-}
-unsafe extern "C" {
-    /// \brief           Write a buffer of PEM information from a DER encoded
-    ///                  buffer.
-    ///
-    /// \param header    The header string to write.
-    /// \param footer    The footer string to write.
-    /// \param der_data  The DER data to encode.
-    /// \param der_len   The length of the DER data \p der_data in Bytes.
-    /// \param buf       The buffer to write to.
-    /// \param buf_len   The length of the output buffer \p buf in Bytes.
-    /// \param olen      The address at which to store the total length written
-    ///                  or required (if \p buf_len is not enough).
-    ///
-    /// \note            You may pass \c NULL for \p buf and \c 0 for \p buf_len
-    ///                  to request the length of the resulting PEM buffer in
-    ///                  `*olen`.
-    ///
-    /// \note            This function may be called with overlapping \p der_data
-    ///                  and \p buf buffers.
-    ///
-    /// \return          \c 0 on success.
-    /// \return          #MBEDTLS_ERR_BASE64_BUFFER_TOO_SMALL if \p buf isn't large
-    ///                  enough to hold the PEM buffer. In  this case, `*olen` holds
-    ///                  the required minimum size of \p buf.
-    /// \return          Another PEM or BASE64 error code on other kinds of failure.
-    pub fn mbedtls_pem_write_buffer(
-        header: *const ::core::ffi::c_char,
-        footer: *const ::core::ffi::c_char,
-        der_data: *const ::core::ffi::c_uchar,
-        der_len: usize,
-        buf: *mut ::core::ffi::c_uchar,
-        buf_len: usize,
-        olen: *mut usize,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief          PKCS#5 PBES2 function
-    ///
-    /// \warning        When decrypting:
-    ///                 - This function validates the CBC padding and returns
-    ///                   #MBEDTLS_ERR_PKCS5_PASSWORD_MISMATCH if the padding is
-    ///                   invalid. Note that this can help active adversaries
-    ///                   attempting to brute-forcing the password. Note also that
-    ///                   there is no guarantee that an invalid password will be
-    ///                   detected (the chances of a valid padding with a random
-    ///                   password are about 1/255).
-    ///
-    /// \param pbe_params the ASN.1 algorithm parameters
-    /// \param mode       either #MBEDTLS_PKCS5_DECRYPT or #MBEDTLS_PKCS5_ENCRYPT
-    /// \param pwd        password to use when generating key
-    /// \param pwdlen     length of password
-    /// \param data       data to process
-    /// \param datalen    length of data
-    /// \param output     Output buffer.
-    ///                   On success, it contains the decrypted data.
-    ///                   On failure, the content is indetermidate.
-    ///                   For decryption, there must be enough room for \p datalen
-    ///                   bytes.
-    ///                   For encryption, there must be enough room for
-    ///                   \p datalen + 1 bytes, rounded up to the block size of
-    ///                   the block cipher identified by \p pbe_params.
-    /// \param output_size size of output buffer.
-    ///                    This must be big enough to accommodate for output plus
-    ///                    padding data.
-    /// \param output_len On success, length of actual data written to the output buffer.
-    ///
-    /// \returns        0 on success, or a MBEDTLS_ERR_XXX code if parsing or decryption fails.
-    pub fn mbedtls_pkcs5_pbes2_ext(
-        pbe_params: *const mbedtls_asn1_buf,
-        mode: ::core::ffi::c_int,
-        pwd: *const ::core::ffi::c_uchar,
-        pwdlen: usize,
-        data: *const ::core::ffi::c_uchar,
-        datalen: usize,
-        output: *mut ::core::ffi::c_uchar,
-        output_size: usize,
-        output_len: *mut usize,
-    ) -> ::core::ffi::c_int;
 }
 unsafe extern "C" {
     /// \brief          PKCS#5 PBKDF2 using HMAC without using the HMAC context
@@ -26881,59 +25840,6 @@ unsafe extern "C" {
     pub fn mbedtls_pkcs7_free(pkcs7: *mut mbedtls_pkcs7);
 }
 unsafe extern "C" {
-    /// \brief            PKCS12 Password Based function (encryption / decryption)
-    ///                   for cipher-based and mbedtls_md-based PBE's
-    ///
-    ///
-    /// \warning          When decrypting:
-    ///                   - This function validates the CBC padding and returns
-    ///                     #MBEDTLS_ERR_PKCS12_PASSWORD_MISMATCH if the padding is
-    ///                     invalid. Note that this can help active adversaries
-    ///                     attempting to brute-forcing the password. Note also that
-    ///                     there is no guarantee that an invalid password will be
-    ///                     detected (the chances of a valid padding with a random
-    ///                     password are about 1/255).
-    ///
-    /// \param pbe_params an ASN1 buffer containing the pkcs-12 PbeParams structure
-    /// \param mode       either #MBEDTLS_PKCS12_PBE_ENCRYPT or
-    ///                   #MBEDTLS_PKCS12_PBE_DECRYPT
-    /// \param cipher_type the cipher used
-    /// \param md_type    the mbedtls_md used
-    /// \param pwd        Latin1-encoded password used. This may only be \c NULL when
-    ///                   \p pwdlen is 0. No null terminator should be used.
-    /// \param pwdlen     length of the password (may be 0)
-    /// \param data       the input data
-    /// \param len        data length
-    /// \param output     Output buffer.
-    ///                   On success, it contains the encrypted or decrypted data,
-    ///                   possibly followed by the CBC padding.
-    ///                   On failure, the content is indeterminate.
-    ///                   For decryption, there must be enough room for \p len
-    ///                   bytes.
-    ///                   For encryption, there must be enough room for
-    ///                   \p len + 1 bytes, rounded up to the block size of
-    ///                   the block cipher identified by \p pbe_params.
-    /// \param output_size size of output buffer.
-    ///                    This must be big enough to accommodate for output plus
-    ///                    padding data.
-    /// \param output_len On success, length of actual data written to the output buffer.
-    ///
-    /// \return           0 if successful, or a MBEDTLS_ERR_XXX code
-    pub fn mbedtls_pkcs12_pbe_ext(
-        pbe_params: *mut mbedtls_asn1_buf,
-        mode: ::core::ffi::c_int,
-        cipher_type: mbedtls_cipher_type_t,
-        md_type: mbedtls_md_type_t,
-        pwd: *const ::core::ffi::c_uchar,
-        pwdlen: usize,
-        data: *const ::core::ffi::c_uchar,
-        len: usize,
-        output: *mut ::core::ffi::c_uchar,
-        output_size: usize,
-        output_len: *mut usize,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
     /// \brief            The PKCS#12 derivation function uses a password and a salt
     ///                   to produce pseudo-random bits for a particular "purpose".
     ///
@@ -26975,6 +25881,8 @@ unsafe extern "C" {
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub struct mbedtls_ssl_cache_entry {
+    ///< entry timestamp
+    pub private_timestamp: mbedtls_time_t,
     ///< session ID
     pub private_session_id: [::core::ffi::c_uchar; 32usize],
     pub private_session_id_len: usize,
@@ -27080,6 +25988,19 @@ unsafe extern "C" {
     ) -> ::core::ffi::c_int;
 }
 unsafe extern "C" {
+    /// \brief          Set the cache timeout
+    ///                 (Default: MBEDTLS_SSL_CACHE_DEFAULT_TIMEOUT (1 day))
+    ///
+    ///                 A timeout of 0 indicates no timeout.
+    ///
+    /// \param cache    SSL cache context
+    /// \param timeout  cache entry timeout in seconds
+    pub fn mbedtls_ssl_cache_set_timeout(
+        cache: *mut mbedtls_ssl_cache_context,
+        timeout: ::core::ffi::c_int,
+    );
+}
+unsafe extern "C" {
     /// \brief          Set the maximum number of cache entries
     ///                 (Default: MBEDTLS_SSL_CACHE_DEFAULT_MAX_ENTRIES (50))
     ///
@@ -27102,8 +26023,6 @@ unsafe extern "C" {
 pub struct mbedtls_ssl_cookie_ctx {
     ///< context for the HMAC portion
     pub private_hmac_ctx: mbedtls_md_context_t,
-    ///< serial number for expiration
-    pub private_serial: ::core::ffi::c_ulong,
     ///< timeout delay, in seconds if HAVE_TIME,
     ///or in number of tickets issued
     pub private_timeout: ::core::ffi::c_ulong,
@@ -27171,6 +26090,8 @@ unsafe extern "C" {
 #[derive(Copy, Clone)]
 pub struct mbedtls_ssl_ticket_key {
     pub private_name: [::core::ffi::c_uchar; 4usize],
+    ///< key generation timestamp (seconds)
+    pub private_generation_time: mbedtls_time_t,
     /// Lifetime of the key in seconds. This is also the lifetime of the
     ///  tickets created under that key.
     pub private_lifetime: u32,
@@ -27537,172 +26458,6 @@ unsafe extern "C" {
     ///
     /// \param csr      CSR to free
     pub fn mbedtls_x509_csr_free(csr: *mut mbedtls_x509_csr);
-}
-unsafe extern "C" {
-    /// \brief           Initialize a CSR context
-    ///
-    /// \param ctx       CSR context to initialize
-    pub fn mbedtls_x509write_csr_init(ctx: *mut mbedtls_x509write_csr);
-}
-unsafe extern "C" {
-    /// \brief           Set the subject name for a CSR
-    ///                  Subject names should contain a comma-separated list
-    ///                  of OID types and values:
-    ///                  e.g. "C=UK,O=ARM,CN=Mbed TLS Server 1"
-    ///
-    /// \param ctx           CSR context to use
-    /// \param subject_name  subject name to set
-    ///
-    /// \return          0 if subject name was parsed successfully, or
-    ///                  a specific error code
-    pub fn mbedtls_x509write_csr_set_subject_name(
-        ctx: *mut mbedtls_x509write_csr,
-        subject_name: *const ::core::ffi::c_char,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief           Set the key for a CSR (public key will be included,
-    ///                  private key used to sign the CSR when writing it)
-    ///
-    /// \param ctx       CSR context to use
-    /// \param key       Asymmetric key to include
-    pub fn mbedtls_x509write_csr_set_key(
-        ctx: *mut mbedtls_x509write_csr,
-        key: *mut mbedtls_pk_context,
-    );
-}
-unsafe extern "C" {
-    /// \brief           Set the MD algorithm to use for the signature
-    ///                  (e.g. MBEDTLS_MD_SHA1)
-    ///
-    /// \param ctx       CSR context to use
-    /// \param md_alg    MD algorithm to use
-    pub fn mbedtls_x509write_csr_set_md_alg(
-        ctx: *mut mbedtls_x509write_csr,
-        md_alg: mbedtls_md_type_t,
-    );
-}
-unsafe extern "C" {
-    /// \brief           Set the Key Usage Extension flags
-    ///                  (e.g. MBEDTLS_X509_KU_DIGITAL_SIGNATURE | MBEDTLS_X509_KU_KEY_CERT_SIGN)
-    ///
-    /// \param ctx       CSR context to use
-    /// \param key_usage key usage flags to set
-    ///
-    /// \return          0 if successful, or MBEDTLS_ERR_X509_ALLOC_FAILED
-    ///
-    /// \note            The <code>decipherOnly</code> flag from the Key Usage
-    ///                  extension is represented by bit 8 (i.e.
-    ///                  <code>0x8000</code>), which cannot typically be represented
-    ///                  in an unsigned char. Therefore, the flag
-    ///                  <code>decipherOnly</code> (i.e.
-    ///                  #MBEDTLS_X509_KU_DECIPHER_ONLY) cannot be set using this
-    ///                  function.
-    pub fn mbedtls_x509write_csr_set_key_usage(
-        ctx: *mut mbedtls_x509write_csr,
-        key_usage: ::core::ffi::c_uchar,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief           Set Subject Alternative Name
-    ///
-    /// \param ctx       CSR context to use
-    /// \param san_list  List of SAN values
-    ///
-    /// \return          0 if successful, or MBEDTLS_ERR_X509_ALLOC_FAILED
-    ///
-    /// \note            Only "dnsName", "uniformResourceIdentifier" and "otherName",
-    ///                  as defined in RFC 5280, are supported.
-    pub fn mbedtls_x509write_csr_set_subject_alternative_name(
-        ctx: *mut mbedtls_x509write_csr,
-        san_list: *const mbedtls_x509_san_list,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief           Set the Netscape Cert Type flags
-    ///                  (e.g. MBEDTLS_X509_NS_CERT_TYPE_SSL_CLIENT | MBEDTLS_X509_NS_CERT_TYPE_EMAIL)
-    ///
-    /// \param ctx           CSR context to use
-    /// \param ns_cert_type  Netscape Cert Type flags to set
-    ///
-    /// \return          0 if successful, or MBEDTLS_ERR_X509_ALLOC_FAILED
-    pub fn mbedtls_x509write_csr_set_ns_cert_type(
-        ctx: *mut mbedtls_x509write_csr,
-        ns_cert_type: ::core::ffi::c_uchar,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief           Generic function to add to or replace an extension in the
-    ///                  CSR
-    ///
-    /// \param ctx       CSR context to use
-    /// \param oid       OID of the extension
-    /// \param oid_len   length of the OID
-    /// \param critical  Set to 1 to mark the extension as critical, 0 otherwise.
-    /// \param val       value of the extension OCTET STRING
-    /// \param val_len   length of the value data
-    ///
-    /// \return          0 if successful, or a MBEDTLS_ERR_X509_ALLOC_FAILED
-    pub fn mbedtls_x509write_csr_set_extension(
-        ctx: *mut mbedtls_x509write_csr,
-        oid: *const ::core::ffi::c_char,
-        oid_len: usize,
-        critical: ::core::ffi::c_int,
-        val: *const ::core::ffi::c_uchar,
-        val_len: usize,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief           Free the contents of a CSR context
-    ///
-    /// \param ctx       CSR context to free
-    pub fn mbedtls_x509write_csr_free(ctx: *mut mbedtls_x509write_csr);
-}
-unsafe extern "C" {
-    /// \brief           Write a CSR (Certificate Signing Request) to a
-    ///                  DER structure
-    ///                  Note: data is written at the end of the buffer! Use the
-    ///                        return value to determine where you should start
-    ///                        using the buffer
-    ///
-    /// \param ctx       CSR to write away
-    /// \param buf       buffer to write to
-    /// \param size      size of the buffer
-    /// \param f_rng     RNG function. This must not be \c NULL.
-    /// \param p_rng     RNG parameter
-    ///
-    /// \return          length of data written if successful, or a specific
-    ///                  error code
-    ///
-    /// \note            \p f_rng is used for the signature operation.
-    pub fn mbedtls_x509write_csr_der(
-        ctx: *mut mbedtls_x509write_csr,
-        buf: *mut ::core::ffi::c_uchar,
-        size: usize,
-        f_rng: mbedtls_f_rng_t,
-        p_rng: *mut ::core::ffi::c_void,
-    ) -> ::core::ffi::c_int;
-}
-unsafe extern "C" {
-    /// \brief           Write a CSR (Certificate Signing Request) to a
-    ///                  PEM string
-    ///
-    /// \param ctx       CSR to write away
-    /// \param buf       buffer to write to
-    /// \param size      size of the buffer
-    /// \param f_rng     RNG function. This must not be \c NULL.
-    /// \param p_rng     RNG parameter
-    ///
-    /// \return          0 if successful, or a specific error code
-    ///
-    /// \note            \p f_rng is used for the signature operation.
-    pub fn mbedtls_x509write_csr_pem(
-        ctx: *mut mbedtls_x509write_csr,
-        buf: *mut ::core::ffi::c_uchar,
-        size: usize,
-        f_rng: mbedtls_f_rng_t,
-        p_rng: *mut ::core::ffi::c_void,
-    ) -> ::core::ffi::c_int;
 }
 unsafe extern "C" {
     pub fn mbedtls_mpi_exp_mod_soft(
