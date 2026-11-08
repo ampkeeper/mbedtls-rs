@@ -193,6 +193,9 @@ pub struct ClientSessionConfig<'a> {
     pub skip_hostname_verification: bool,
     /// Ordered key-exchange groups to offer. `None` keeps Mbed TLS's defaults.
     pub key_exchange_groups: Option<&'a [TlsGroup]>,
+    /// Ciphersuites to offer, in order. `None` keeps Mbed TLS's defaults.
+    /// An empty list or any zero entry is rejected. The session owns a copy.
+    pub ciphersuites: Option<&'a [i32]>,
 }
 
 impl<'a> Default for ClientSessionConfig<'a> {
@@ -213,6 +216,7 @@ impl<'a> ClientSessionConfig<'a> {
             alpn_protocols: None,
             skip_hostname_verification: false,
             key_exchange_groups: None,
+            ciphersuites: None,
         }
     }
 }
@@ -341,6 +345,13 @@ impl<'a> SessionConfig<'a> {
         }
     }
 
+    fn ciphersuites(&self) -> Option<&'a [i32]> {
+        match self {
+            SessionConfig::Client(ClientSessionConfig { ciphersuites, .. }) => *ciphersuites,
+            SessionConfig::Server { .. } => None,
+        }
+    }
+
     fn raw_mode(&self) -> c_int {
         match self {
             Self::Client { .. } => MBEDTLS_SSL_IS_CLIENT as c_int,
@@ -412,6 +423,41 @@ impl Drop for GroupArray {
     }
 }
 
+/// Owned, zero-terminated ciphersuite array allocated through Mbed TLS.
+struct CiphersuiteArray(NonNull<c_int>);
+
+impl CiphersuiteArray {
+    fn from_slice(ciphersuites: &[i32]) -> Option<Self> {
+        let count = ciphersuites.len().checked_add(1)?;
+        // SAFETY: calloc returns a suitably aligned, zero-filled allocation for
+        // `count` ints or null, which NonNull checks before use.
+        let pointer =
+            NonNull::new(unsafe { mbedtls_calloc(count, size_of::<c_int>()) }.cast::<c_int>())?;
+        // SAFETY: the fresh allocation holds the slice plus a zero terminator;
+        // the independent source cannot overlap it. The terminator stays zero.
+        unsafe {
+            core::ptr::copy_nonoverlapping(
+                ciphersuites.as_ptr(),
+                pointer.as_ptr(),
+                ciphersuites.len(),
+            );
+        }
+        Some(Self(pointer))
+    }
+
+    fn as_ptr(&self) -> *const c_int {
+        self.0.as_ptr()
+    }
+}
+
+impl Drop for CiphersuiteArray {
+    fn drop(&mut self) {
+        // SAFETY: this array uniquely owns this Mbed TLS allocation and frees
+        // it exactly once, after the SSL context and configuration are dropped.
+        unsafe { mbedtls_free(self.0.as_ptr().cast::<c_void>()) }
+    }
+}
+
 /// Session state
 struct SessionState<'a> {
     /// The SSL context
@@ -445,11 +491,19 @@ struct SessionState<'a> {
     ///
     /// This must remain after `ssl_context` and `_ssl_config` so Rust drops those fields first.
     _group_ids: Option<GroupArray>,
+    /// Ciphersuites referenced by the SSL configuration; dropped after it.
+    _ciphersuites: Option<CiphersuiteArray>,
 }
 
 impl<'a> SessionState<'a> {
     /// Initialize the Session state using the given configuration
     fn new(conf: &SessionConfig<'a>) -> Result<Self, MbedtlsError> {
+        if let Some(ciphersuites) = conf.ciphersuites() {
+            if ciphersuites.is_empty() || ciphersuites.contains(&0) {
+                return Err(MbedtlsError::new(MBEDTLS_ERR_SSL_BAD_INPUT_DATA));
+            }
+        }
+
         merr!(unsafe { psa_crypto_init() })?;
 
         let mut ssl_config = MBox::new().ok_or(MbedtlsError::new(MBEDTLS_ERR_SSL_ALLOC_FAILED))?;
@@ -518,6 +572,17 @@ impl<'a> SessionState<'a> {
             None
         };
 
+        let ciphersuites = if let Some(ciphersuites) = conf.ciphersuites() {
+            let ciphersuites = CiphersuiteArray::from_slice(ciphersuites)
+                .ok_or(MbedtlsError::new(MBEDTLS_ERR_SSL_ALLOC_FAILED))?;
+            // SAFETY: the owned, zero-terminated array is moved into SessionState
+            // and outlives both the SSL context and the SSL configuration.
+            unsafe { mbedtls_ssl_conf_ciphersuites(&mut *ssl_config, ciphersuites.as_ptr()) };
+            Some(ciphersuites)
+        } else {
+            None
+        };
+
         let mut drbg_context =
             MBox::new().ok_or(MbedtlsError::new(MBEDTLS_ERR_SSL_ALLOC_FAILED))?;
 
@@ -560,6 +625,7 @@ impl<'a> SessionState<'a> {
             _creds: conf.creds().cloned(),
             _alpn_ptrs: alpn,
             _group_ids: group_ids,
+            _ciphersuites: ciphersuites,
         })
     }
 }
